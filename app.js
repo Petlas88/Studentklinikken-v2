@@ -22,7 +22,7 @@ const homePage = {
                 <router-link to="treatments" class="home-links">Våre behandlinger</router-link>
             </div>
         </div>
-        <footer id="home-footer"><router-link to="rights" class="footer-links">Rettigheter</router-link> | <router-link to="contact" class="footer-links">Kontakt oss</router-link></footer>
+        <div id="home-footer"><router-link to="rights" class="footer-links">Rettigheter</router-link> | <router-link to="contact" class="footer-links">Kontakt oss</router-link></div>
     </div>
     `,
   data() {
