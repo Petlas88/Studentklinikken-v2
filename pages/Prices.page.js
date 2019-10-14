@@ -23,8 +23,8 @@ const PricesPage = {
     return {
       ordinaryPriceBtn: "Ordinær",
       ordinaryPrice: {
-        firstTreatment: "Første behandling ordinær 300,-",
-        nextTreatment: "Oppfølgende behandling ordinær 220,-",
+        firstTreatment: "Første behandling 300,-",
+        nextTreatment: "Oppfølgende behandling 220,-",
         otherPrices1: "Kostveiledning er gratis",
         otherprices2:
           "Sommerklinikken for akupunktur og osteopati har egen priser"
@@ -32,8 +32,8 @@ const PricesPage = {
       showOrdinary: false,
       discPriceBtn: "Rabatt*",
       discPrice: {
-        firstTreatment: "Første behandling ordinær 150,-",
-        nextTreatment: "Oppfølgende behandling ordinær 100,-",
+        firstTreatment: "Første behandling 150,-",
+        nextTreatment: "Oppfølgende behandling 100,-",
         otherPrices1: "Kostveiledning er gratis",
         otherprices2:
           "Sommerklinikken for akupunktur og osteopati har egen priser"
