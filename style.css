@@ -1,0 +1,93 @@
+body {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+.row {
+  height: 30vh;
+}
+.container {
+  height: 100vh;
+  text-align: center;
+}
+
+#title-row {
+  padding-top: 4.5rem;
+  font-size: 1.3rem;
+}
+
+#btn-row {
+  padding-top: 3rem;
+}
+
+#link-row {
+  padding-top: 2rem;
+}
+
+#booking-btn {
+  width: 80%;
+  cursor: pointer;
+  color: #fff;
+  border: none;
+  background-color: #d9a33f;
+  font-size: 1.5rem;
+  font-weight: 300;
+  padding: 2rem 5rem;
+  border-radius: 5px;
+}
+
+#home-footer {
+  text-decoration: none;
+}
+
+.footer-links:hover {
+  color: #d9a33f;
+}
+
+.footer-links {
+  text-decoration: none;
+  color: black;
+}
+
+.home-links {
+  text-decoration: none;
+  color: black;
+  font-size: 1.6rem;
+}
+
+.home-links:hover {
+  color: #d9a33f;
+}
+
+.prices-btns {
+  text-align: ;
+  height: 100px;
+  width: 150px;
+  cursor: pointer;
+  color: #fff;
+  border: none;
+  background-color: #666666;
+  font-size: 1.5rem;
+  font-weight: 300;
+  padding: 2rem 2rem;
+  border-radius: 5px;
+  margin: 0.3rem;
+}
+
+.prices-btns-clicked {
+  background-color: #d9a33f;
+}
+
+#prices-btn-row {
+}
+
+.prices-text {
+  background-color: #ebebeb;
+  padding: 0.5rem;
+  text-align: left;
+  margin: 4% auto;
+  width: 90%;
+  border: 1px #d9a33f solid;
+  border-radius: 3px;
+}
