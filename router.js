@@ -1,5 +1,6 @@
 import HomePage from "./pages/Home.page.js";
 import PricesPage from "./pages/Prices.page.js";
+import BookingPage from "./pages/Booking.page.js";
 
 const router = new VueRouter({
   routes: [
@@ -10,6 +11,10 @@ const router = new VueRouter({
     {
       path: "/prices",
       component: PricesPage
+    },
+    {
+      path: "/booking",
+      component: BookingPage
     }
   ]
 });
