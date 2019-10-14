@@ -30,7 +30,7 @@ body {
   cursor: pointer;
   color: #fff;
   border: none;
-  background-color: #d9a33f;
+  background-color: #1976d2;
   font-size: 1.5rem;
   font-weight: 300;
   padding: 2rem 5rem;
@@ -48,7 +48,7 @@ body {
 }
 
 .footer-links:hover {
-  color: #d9a33f;
+  color: #1976d2;
 }
 
 .footer-links {
@@ -63,7 +63,7 @@ body {
 }
 
 .home-links:hover {
-  color: #d9a33f;
+  color: #1976d2;
 }
 
 .prices-btns {
@@ -81,7 +81,7 @@ body {
 }
 
 .prices-btns-clicked {
-  background-color: #d9a33f;
+  background-color: #1976d2;
 }
 
 .prices-text {
@@ -90,6 +90,6 @@ body {
   text-align: left;
   margin: 4% auto;
   width: 90%;
-  border: 1px #d9a33f solid;
+  border: 1px #1976d2 solid;
   border-radius: 3px;
 }

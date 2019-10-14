@@ -42,10 +42,12 @@ const prices = {
         </div>
         <div class="row">
             <div id="prices-btn-row" class="col-12">
-              <button class="prices-btns" @click="showOrdinary = !showOrdinary, showDiscount = false" :class="{'prices-btns-clicked': showOrdinary}">{{ordinaryPriceBtn}}</button> 
-              <button class="prices-btns" @click="showDiscount = !showDiscount, showOrdinary = false" :class="{'prices-btns-clicked': showDiscount}">{{discPriceBtn}}</button>
-              <div id="ordinary-price-text" class="prices-text" v-if="showOrdinary"><p>{{ordinaryPrice}}</p></div>
-              <div id="discount-price-text" class="prices-text" v-if="showDiscount"><p>{{discPrice}}</p></div>
+              <button class="prices-btns" @click="showOrdinary = !showOrdinary, showDiscount = false" :class="{'prices-btns-clicked': showOrdinary}">{{ordinaryPriceBtn}}
+              </button> 
+              <button class="prices-btns" @click="showDiscount = !showDiscount, showOrdinary = false" :class="{'prices-btns-clicked': showDiscount}">{{discPriceBtn}}
+              </button>
+              <div id="ordinary-price-text" class="prices-text" v-if="showOrdinary"><p v-for="value in ordinaryPrice">{{value}}</p></div>
+              <div id="discount-price-text" class="prices-text" v-if="showDiscount"><p v-for="value in discPrice">{{value}}</p></div>
               <div><p>{{priceInfo}}</p></div>
             </div>    
         </div>
@@ -54,12 +56,25 @@ const prices = {
   data() {
     return {
       ordinaryPriceBtn: "Ordinær",
-      ordinaryPrice: "Normal pris",
+      ordinaryPrice: {
+        firstTreatment: "Første behandling ordinær 300,-",
+        nextTreatment: "Oppfølgende behandling ordinær 220,-",
+        otherPrices1: "Kostveiledning er gratis",
+        otherprices2:
+          "Sommerklinikken for akupunktur og osteopati har egen priser"
+      },
       showOrdinary: false,
       discPriceBtn: "Rabatt*",
-      discPrice: "Rabbatert pris",
+      discPrice: {
+        firstTreatment: "Første behandling ordinær 150,-",
+        nextTreatment: "Oppfølgende behandling ordinær 100,-",
+        otherPrices1: "Kostveiledning er gratis",
+        otherprices2:
+          "Sommerklinikken for akupunktur og osteopati har egen priser"
+      },
       showDiscount: false,
-      priceInfo: "*Rabatten gjelder for disse"
+      priceInfo:
+        "*Rabatten gjelder: Honnør over 60 år, ungdom under 18 år, studenter og HK ansatte"
     };
   }
 };
