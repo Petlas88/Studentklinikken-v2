@@ -95,3 +95,49 @@ body {
   border: 1px #1976d2 solid;
   border-radius: 3px;
 }
+
+/* Treatments page styles */
+
+#buttons-container {
+  
+  margin-top: 12%;
+  /*background-color: rgb(179, 183, 184);*/
+}
+
+.button-element {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.17em;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ebebeb;
+  background-color: #1976d2;
+  margin-bottom: 2%;
+  border: none;
+  height: 10%;
+  width: 100%;
+  outline: none;
+  
+}
+
+.modals {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ebebeb;
+  overflow: scroll;
+  position: fixed;
+  width: 94%;
+  height: 80%;
+  top: 10%;
+  left: 50%;
+  margin-left: -47%;
+  border: #1976d2 solid 2px;
+  border-radius: 5px;
+  
+}
+
+.modals-body {
+  width: 90%;
+}
