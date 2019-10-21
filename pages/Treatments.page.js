@@ -8,8 +8,11 @@ const TreatmentsPage = {
             </div>
 
             <div v-if="modalOneVisible" id="modal-one" class="modals">
-                <button class="modal-collapse-btn" @click="modalOneVisible = !modalOneVisible">X</button>
+                <div class="modal-header">
+                    <button class="modal-collapse-btn" @click="modalOneVisible = !modalOneVisible">&#10006</button>
+                </div>
                 <div class="modals-body">
+                    <br><br>
                     <h4>Akupunktur er en persontilpasset behandling der
                     diagnostikk, behandling og oppfølging er skreddersydd for
                     hver pasient med sine unike særtrekk og behov under hvert
@@ -42,8 +45,11 @@ const TreatmentsPage = {
             </div>
 
             <div v-if="modalTwoVisible" id="modal-two" class="modals">
-                <button class="modal-collapse-btn" @click="modalTwoVisible = !modalTwoVisible">X</button>
+            <div class="modal-header">
+                <button class="modal-collapse-btn" @click="modalTwoVisible = !modalTwoVisible">&#10006</button>
+            </div>
                 <div class="modals-body">
+                    <br><br>
                     <h4>En osteopat undersøker og behandler muskel- og
                     skjelettsmerter med manuelle behandlingsteknikker
                     på benk. Terapeuten fokuserer på å avdekke
@@ -77,8 +83,11 @@ const TreatmentsPage = {
                 </div>
             </div>
             <div v-if="modalThreeVisible" id="modal-three" class="modals">
-                <button class="modal-collapse-btn" @click="modalThreeVisible = !modalThreeVisible">X</button>
+            <div class="modal-header">
+                <button class="modal-collapse-btn" @click="modalThreeVisible = !modalThreeVisible">&#10006</button>
+            </div>
                 <div class="modals-body">
+                    <br><br>
                     <h4>Veiledning passer ypperlig for deg
                     som ønsker å forebygge sykdom,
                     gå ned eller opp i vekt, spise
@@ -97,9 +106,12 @@ const TreatmentsPage = {
                 </div>
             </div>
             <div v-if="modalFourVisible" id="modal-four" class="modals">
-                <button class="modal-collapse-btn" @click="modalFourVisible = !modalFourVisible">X</button>
+            <div class="modal-header">
+                <button class="modal-collapse-btn" @click="modalFourVisible = !modalFourVisible">&#10006</button>
+            </div>
                 <div class="modals-body">
-                    <h4>Høyskolen Kristanias fysiologiske testlaboratorium er et topp moderne
+                    <br><br>
+                    <h4>Høyskolen Kristianias fysiologiske testlaboratorium er et topp moderne
                     laboratorium som brukes til undervisning og forskning.
                     Også våre studenter, spesielt de på Bachelor i Fysisk aktivitet og ernæring,
                     har mye undervisning i laboratoriet.
