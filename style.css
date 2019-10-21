@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap");
 body {
   height: 100%;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Raleway", sans-serif;
   overflow: hidden;
   margin: 0;
 }
@@ -25,14 +25,15 @@ body {
 }
 
 #booking-btn {
+  font-family: "Raleway", sans-serif;
   width: 80%;
+  height: 5rem;
   cursor: pointer;
   color: #fff;
   border: none;
   background-color: #1875d1;
   font-size: 1.3rem;
   font-weight: 300;
-  padding: 2rem 5rem;
   border-radius: 5px;
 }
 
@@ -66,17 +67,17 @@ body {
 }
 
 .prices-btns {
-  height: 100px;
-  width: 150px;
+  height: 6rem;
+  width: 9rem;
   cursor: pointer;
   color: #fff;
   border: none;
   background-color: #666666;
+  font-family: "Raleway", sans-serif;
   font-size: 1.5rem;
   font-weight: 300;
-  padding: 2rem 2rem;
   border-radius: 5px;
-  margin: 0.3rem;
+  margin: 0.5%;
   outline: none;
 }
 
@@ -98,23 +99,24 @@ body {
 /* Treatments page styles */
 
 #buttons-container {
-  margin-top: 12%;
-  /*background-color: rgb(179, 183, 184);*/
+}
+
+#trtmnt-btn-row {
+  padding-top: 2rem;
+  height: 30vh;
 }
 
 .button-element {
+  border-radius: 5px;
   font-family: "Raleway", sans-serif;
-  font-size: 1.17em;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 1.3rem;
+  font-weight: 300;
   color: #ebebeb;
   background-color: #1875d1;
   margin-bottom: 2%;
   border: none;
-  height: 10%;
-  width: 100%;
+  height: 5rem;
+  width: 80%;
   outline: none;
 }
 
@@ -132,6 +134,7 @@ body {
   margin-left: -47%;
   border: #1875d1 solid 2px;
   border-radius: 5px;
+  z-index: 1;
 }
 
 .modals::-webkit-scrollbar {

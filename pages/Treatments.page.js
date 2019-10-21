@@ -1,5 +1,5 @@
 const TreatmentsPage = {
-    template: `
+  template: `
         <div class="container">
             <div id="title-row" class="row">
                 <div class="col-12">
@@ -167,37 +167,31 @@ const TreatmentsPage = {
 
                 </div>
             </div>
-                
-            <div id="buttons-container" class="container">
-                <button class="button-element" @click="modalOneVisible = !modalOneVisible">{{modalOneTitle}}</button>
-                <button class="button-element" @click="modalTwoVisible = !modalTwoVisible">{{modalTwoTitle}}</button>
-                <button class="button-element" @click="modalThreeVisible = !modalThreeVisible">{{modalThreeTitle}}</button>
-                <button class="button-element" @click="modalFourVisible = !modalFourVisible">{{modalFourTitle}}</button>
-                
-                
-            </div>
+            <div id="trtmnt-btn-row" class="row">   
+                <div id="buttons-container" class="col-12">
+                    <button class="button-element" @click="modalOneVisible = !modalOneVisible">{{modalOneTitle}}</button>
+                    <button class="button-element" @click="modalTwoVisible = !modalTwoVisible">{{modalTwoTitle}}</button>
+                    <button class="button-element" @click="modalThreeVisible = !modalThreeVisible">{{modalThreeTitle}}</button>
+                    <button class="button-element" @click="modalFourVisible = !modalFourVisible">{{modalFourTitle}}</button>  
+                </div>
+            </div> 
         </div>
     
     `,
 
-    data() {
-        return {
-            title: "Våre behandlinger",
-            modalOneVisible: false,
-            modalTwoVisible: false,
-            modalThreeVisible: false,
-            modalFourVisible: false,
-            modalOneTitle: "Akupunktur",
-            modalTwoTitle: "Osteopati",
-            modalThreeTitle: "Kostholdsveiledning",
-            modalFourTitle: "Fisiologisk testlab"
-
-            
-            
-        }
-    }
-
-}
+  data() {
+    return {
+      title: "Våre behandlinger",
+      modalOneVisible: false,
+      modalTwoVisible: false,
+      modalThreeVisible: false,
+      modalFourVisible: false,
+      modalOneTitle: "Akupunktur",
+      modalTwoTitle: "Osteopati",
+      modalThreeTitle: "Kostholdsveiledning",
+      modalFourTitle: "Fisiologisk testlab"
+    };
+  }
+};
 
 export default TreatmentsPage;
-
