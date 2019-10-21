@@ -14,7 +14,7 @@ const PricesPage = {
                 </button>
                 <div id="ordinary-price-text" class="prices-text" v-if="showOrdinary"><p v-for="value in ordinaryPrice">{{value}}</p></div>
                 <div id="discount-price-text" class="prices-text" v-if="showDiscount"><p v-for="value in discPrice">{{value}}</p></div>
-                <div><p>{{priceInfo}}</p></div>
+                <div><p v-for="value in priceInfo">{{value}}</p></div>
               </div>    
           </div>
       </div>
@@ -24,23 +24,22 @@ const PricesPage = {
       ordinaryPriceBtn: "Ordinær",
       ordinaryPrice: {
         firstTreatment: "Første behandling 300,-",
-        nextTreatment: "Oppfølgende behandling 220,-",
-        otherPrices1: "Kostveiledning er gratis",
-        otherprices2:
-          "Sommerklinikken for akupunktur og osteopati har egen priser"
+        nextTreatment: "Oppfølgende behandling 220,-"
       },
       showOrdinary: false,
       discPriceBtn: "Rabatt*",
       discPrice: {
         firstTreatment: "Første behandling 150,-",
-        nextTreatment: "Oppfølgende behandling 100,-",
-        otherPrices1: "Kostveiledning er gratis",
-        otherprices2:
-          "Sommerklinikken for akupunktur og osteopati har egen priser"
+        nextTreatment: "Oppfølgende behandling 100,-"
       },
       showDiscount: false,
-      priceInfo:
-        "*Rabatten gjelder: Honnør over 60 år, ungdom under 18 år, studenter og HK ansatte"
+      priceInfo: {
+        otherPrices1: "Kostveiledning er gratis",
+        otherprices2:
+          "Sommerklinikken for akupunktur og osteopati har egen priser",
+        discWho:
+          "*Rabatten gjelder: Honnør over 60 år, ungdom under 18 år, studenter og HK ansatte"
+      }
     };
   }
 };

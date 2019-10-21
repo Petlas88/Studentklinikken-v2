@@ -24,9 +24,6 @@ body {
   padding-top: 2rem;
 }
 
-#link-row {
-}
-
 #booking-btn {
   width: 80%;
   cursor: pointer;
@@ -126,15 +123,24 @@ body {
   align-items: center;
   flex-direction: column;
   background-color: #ebebeb;
-  overflow: scroll;
+  overflow-y: scroll;
   position: fixed;
   width: 94%;
   height: 80%;
   top: 10%;
   left: 50%;
   margin-left: -47%;
-  border: #1976d2 solid 2px;
+  border: #1875d1 solid 2px;
   border-radius: 5px;
+}
+
+.modals::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+.modals::-webkit-scrollbar-thumb {
+  background-color: #1875d1;
+  border-radius: 50px;
 }
 
 .modals-body {
@@ -161,6 +167,12 @@ body {
   border-radius: 100%;
   height: 2.1em;
   width: 2.1em;
+}
+
+.modal-collapse-btn:hover {
+  background-color: #1875d1;
+  color: #fff;
+  cursor: pointer;
 }
 
 @media (min-width: 1025px) {
