@@ -12,7 +12,7 @@ const router = new VueRouter({
       component: LogInPage
     },
     {
-      path: "/homePage",
+      path: "/home",
       component: HomePage
     },
     {
