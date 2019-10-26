@@ -1,0 +1,79 @@
+#buttons-container {
+}
+
+#trtmnt-btn-row {
+  padding-top: 2rem;
+  height: 30vh;
+}
+
+.button-element {
+  border-radius: 5px;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: #ebebeb;
+  background-color: #1875d1;
+  margin-bottom: 2%;
+  border: none;
+  height: 5rem;
+  width: 80%;
+  outline: none;
+}
+
+.modals {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ebebeb;
+  overflow-y: scroll;
+  position: fixed;
+  width: 94%;
+  height: 80%;
+  top: 10%;
+  left: 50%;
+  margin-left: -47%;
+  border: #1875d1 solid 2px;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.modals::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+.modals::-webkit-scrollbar-thumb {
+  background-color: #1875d1;
+  border-radius: 50px;
+}
+
+.modals-body {
+  width: 90%;
+}
+
+.modal-header {
+  display: flex;
+  position: fixed;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #ebebeb;
+  width: 92%;
+  box-shadow: 0px 10px 8px #ebebeb;
+}
+
+.modal-collapse-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.3em;
+  margin-right: 0.3em;
+  border: #1875d1 solid 2px;
+  border-radius: 100%;
+  height: 2.1em;
+  width: 2.1em;
+}
+
+.modal-collapse-btn:hover {
+  background-color: #1875d1;
+  color: #fff;
+  cursor: pointer;
+}
