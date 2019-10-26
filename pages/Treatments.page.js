@@ -1,5 +1,8 @@
+
 const TreatmentsPage = {
+  mixins: [VueClickaway.mixin],
   template: `
+        
         <div class="container">
             <div id="title-row" class="row">
                 <div class="col-12">
@@ -7,7 +10,7 @@ const TreatmentsPage = {
                 </div>    
             </div>
 
-            <div v-if="modalOneVisible" id="modal-one" class="modals">
+            <div v-if="modalOneVisible" id="modal-one" class="modals" v-on-clickaway="hideModal">
                 <div class="modal-header">
                     <button class="modal-collapse-btn" @click="modalOneVisible = !modalOneVisible">&#10006</button>
                 </div>
@@ -44,10 +47,10 @@ const TreatmentsPage = {
                 </div>
             </div>
 
-            <div v-if="modalTwoVisible" id="modal-two" class="modals">
-            <div class="modal-header">
-                <button class="modal-collapse-btn" @click="modalTwoVisible = !modalTwoVisible">&#10006</button>
-            </div>
+            <div v-if="modalTwoVisible" id="modal-two" class="modals" v-on-clickaway="hideModal">
+                <div class="modal-header">
+                    <button class="modal-collapse-btn" @click="modalTwoVisible = !modalTwoVisible">&#10006</button>
+                </div>
                 <div class="modals-body">
                     <br><br>
                     <h4>En osteopat undersøker og behandler muskel- og
@@ -82,10 +85,10 @@ const TreatmentsPage = {
                     </p>
                 </div>
             </div>
-            <div v-if="modalThreeVisible" id="modal-three" class="modals">
-            <div class="modal-header">
-                <button class="modal-collapse-btn" @click="modalThreeVisible = !modalThreeVisible">&#10006</button>
-            </div>
+            <div v-if="modalThreeVisible" id="modal-three" class="modals" v-on-clickaway="hideModal">
+                <div class="modal-header">
+                    <button class="modal-collapse-btn" @click="modalThreeVisible = !modalThreeVisible">&#10006</button>
+                </div>
                 <div class="modals-body">
                     <br><br>
                     <h4>Veiledning passer ypperlig for deg
@@ -105,10 +108,10 @@ const TreatmentsPage = {
 
                 </div>
             </div>
-            <div v-if="modalFourVisible" id="modal-four" class="modals">
-            <div class="modal-header">
-                <button class="modal-collapse-btn" @click="modalFourVisible = !modalFourVisible">&#10006</button>
-            </div>
+            <div v-if="modalFourVisible" id="modal-four" class="modals" v-on-clickaway="hideModal">
+                <div class="modal-header">
+                    <button class="modal-collapse-btn" @click="modalFourVisible = !modalFourVisible">&#10006</button>
+                </div>
                 <div class="modals-body">
                     <br><br>
                     <h4>Høyskolen Kristianias fysiologiske testlaboratorium er et topp moderne
@@ -169,10 +172,10 @@ const TreatmentsPage = {
             </div>
             <div id="trtmnt-btn-row" class="row">   
                 <div id="buttons-container" class="col-12">
-                    <button class="button-element" @click="modalOneVisible = !modalOneVisible">{{modalOneTitle}}</button>
-                    <button class="button-element" @click="modalTwoVisible = !modalTwoVisible">{{modalTwoTitle}}</button>
-                    <button class="button-element" @click="modalThreeVisible = !modalThreeVisible">{{modalThreeTitle}}</button>
-                    <button class="button-element" @click="modalFourVisible = !modalFourVisible">{{modalFourTitle}}</button>  
+                    <button class="button-element" @click="modalOneVisible = !modalOneVisible, modalIsVisible = !modalIsVisible">{{modalOneTitle}}</button>
+                    <button class="button-element" @click="modalTwoVisible = !modalTwoVisible, modalIsVisible = !modalIsVisible">{{modalTwoTitle}}</button>
+                    <button class="button-element" @click="modalThreeVisible = !modalThreeVisible, modalIsVisible = !modalIsVisible">{{modalThreeTitle}}</button>
+                    <button class="button-element" @click="modalFourVisible = !modalFourVisible, modalIsVisible = !modalIsVisible">{{modalFourTitle}}</button>  
                 </div>
             </div> 
         </div>
@@ -186,12 +189,25 @@ const TreatmentsPage = {
       modalTwoVisible: false,
       modalThreeVisible: false,
       modalFourVisible: false,
+      modalIsVisible: false,
       modalOneTitle: "Akupunktur",
       modalTwoTitle: "Osteopati",
       modalThreeTitle: "Kostholdsveiledning",
-      modalFourTitle: "Fisiologisk testlab"
+      modalFourTitle: "Fysiologisk testlab"
     };
+  },
+
+  methods: {
+    hideModal() {
+        this.modalOneVisible = false;
+        this.modalTwoVisible = false;
+        this.modalThreeVisible = false;
+        this.modalFourVisible = false;
+    }
   }
+
+
 };
+
 
 export default TreatmentsPage;
