@@ -38,6 +38,7 @@ const LogInPage = {
                 <p>eller</p>
                 <hr/>
                 <h2 @click="visibleMod = !visibleMod" id="reg-link">Registrer deg</h2>
+                <router-link to="home">-></router-link>
             </div>
         </div>
         
