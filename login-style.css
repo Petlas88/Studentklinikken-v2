@@ -1,6 +1,83 @@
 .login-input {
-  width: 50%;
+  width: 70%;
   line-height: 1.5rem;
   padding: 0.3rem;
   outline-color: #1875d1;
+  border-radius: 5px;
+}
+
+.login-btns {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-family: "Raleway", sans-serif;
+  width: 45%;
+  height: 5rem;
+  cursor: pointer;
+  color: #fff;
+  border: none;
+  background-color: #1875d1;
+  font-size: 1.3rem;
+  font-weight: 300;
+  border-radius: 5px;
+  outline: none;
+}
+
+#login-input-row {
+  height: 70vh;
+}
+
+hr {
+  width: 50%;
+}
+
+#reg-link:hover {
+  color: #1875d1;
+  cursor: pointer;
+}
+
+#reg-modal {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ebebeb;
+  overflow: hidden;
+  position: fixed;
+  width: 94%;
+  height: 80%;
+  top: 10%;
+  left: 50%;
+  margin-left: -47%;
+  border: #1875d1 solid 2px;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+#reg-modal-body {
+  width: 90%;
+}
+
+#reg-modal-header {
+  display: flex;
+  position: fixed;
+  justify-content: flex-end;
+  align-items: center;
+  width: 92%;
+}
+
+#reg-modal-collapse-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.3em;
+  margin-right: 0.3em;
+  border: #1875d1 solid 2px;
+  border-radius: 100%;
+  height: 2.1em;
+  width: 2.1em;
+}
+
+#reg-modal-collapse-btn:hover {
+  background-color: #1875d1;
+  color: #fff;
+  cursor: pointer;
 }
