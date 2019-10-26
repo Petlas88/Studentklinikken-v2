@@ -3,6 +3,7 @@ import HomePage from "./pages/Home.page.js";
 import PricesPage from "./pages/Prices.page.js";
 import BookingPage from "./pages/Booking.page.js";
 import TreatmentsPage from "./pages/Treatments.page.js";
+import RightsPage from "./pages/Rights.page.js";
 
 const router = new VueRouter({
   routes: [
@@ -11,7 +12,7 @@ const router = new VueRouter({
       component: LogInPage
     },
     {
-      path: "/homePage",
+      path: "/home",
       component: HomePage
     },
     {
@@ -25,6 +26,10 @@ const router = new VueRouter({
     {
       path: "/treatments",
       component: TreatmentsPage
+    },
+    {
+      path: "/rights",
+      component: RightsPage
     }
   ]
 });
