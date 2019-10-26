@@ -18,6 +18,7 @@ const LogInPage = {
                 <input type="password" class="reg-input" placeholder="Passord" id="reg-pass"/>
                 <h2>Gjenta passord</h2>
                 <input type="password" class="reg-input" placeholder="Gjenta passord" id="reg-rep-pass"/>
+                <button id="reg-btn">Registrer deg</button>
             </div>
         </div>
         <!--END REGISTRATION MODAL-->
@@ -30,10 +31,10 @@ const LogInPage = {
             <div class="col-12">
                 <h2><b>{{userTxt}}</b></h2>
                 <input type="text" class="login-input" id="username-input" placeholder="Brukernavn(e-post)"/>
-                <h2><b>{{passTxt}}</h2></p>
+                <h2><b>{{passTxt}}</b></h2></p>
                 <input type="password" class="login-input" id="password-input" placeholder="Passord"/>
                 <br/>
-                <button class="login-btns">Logg inn</button> 
+                <button id="login-btn">Logg inn</button> 
                 <hr/>
                 <p>eller</p>
                 <hr/>
@@ -49,8 +50,29 @@ const LogInPage = {
       userTxt: "Brukernavn",
       passTxt: "Passord",
       visibleMod: false,
-      modTitle: "Registrer deg"
+      modTitle: "Registrer deg",
+      loggedIn: false,
+      users: [
+        {
+          username: "kek@kek.no",
+          password: "kek123"
+        }
+      ]
     };
+  },
+  methods: {
+    /* checkLogin() {
+      let username = document.getElementById("username-input").value;
+      let password = document.getElementById("passwor-input").value;
+      for (let i = 0; i < this.users.length; i++) {
+        if (username == this.users[i].username) {
+          if (password == this.users[i].password) {
+            this.loggedIn = true;
+            console.log(this.loggedIn);
+          }
+        }
+      }
+    }*/
   }
 };
 

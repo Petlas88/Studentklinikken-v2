@@ -4,6 +4,8 @@ body {
   font-family: "Raleway", sans-serif;
   overflow: hidden;
   margin: 0;
+  background-color: #b36583;
+  background-image: linear-gradient(135deg, #4cebd0 0%, #8fc7ec 100%);
 }
 
 .row {
@@ -12,6 +14,7 @@ body {
 .container {
   height: 100vh;
   text-align: center;
+  /* background: rgba(253, 253, 253, 0.425);*/
 }
 
 #title-row {
