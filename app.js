@@ -2,5 +2,9 @@ import router from "./router.js";
 
 new Vue({
   el: "#app",
-  router: router
+  router: router,
+  components: {
+    vuejsDatepicker
+  }
+
 });
