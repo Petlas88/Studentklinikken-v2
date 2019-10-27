@@ -22,8 +22,8 @@ const LogInPage = {
             </div>
         </div>
         <!--END REGISTRATION MODAL-->
-        <div class="row">
-            <div id="title-row" class="col-12">
+        <div id="login-title-row" class="row">
+            <div class="col-12">
                 <h1>Studentklinikken</h1>
             </div>
         </div>
