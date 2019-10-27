@@ -3,10 +3,10 @@ body {
   height: 100%;
   font-family: "Raleway", sans-serif;
   margin: 0;
+  overflow: hidden;
   background-color: #c0faf0;
   background-image: linear-gradient(135deg, #c0faf0 0%, #90d1fd 100%);
-  background-size: 600%;
-  
+  background-attachment: fixed;  
 }
 
 .row {
@@ -15,13 +15,43 @@ body {
 .container {
   height: 100vh;
   text-align: center;
+  overflow-y: scroll;
   /* background: rgba(253, 253, 253, 0.425);*/
+}
+
+*::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #1875d1;
+  border-radius: 50px;
 }
 
 #title-row {
   text-align: center;
   padding-top: 3rem;
   font-size: 1.3rem;
+}
+
+.bounce-enter-active {
+  animation: bounce-in .5s;
+}
+.bounce-leave-active {
+  animation: bounce-in .5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    top: 300%; 
+  }
+  
+  80% {
+    top: 1%; 
+  }
+
+  100% {
+    top: 5%
+  }
 }
 
 @media (min-width: 1025px) {

@@ -49,6 +49,7 @@
   padding-top: 2%;
   height: 75%;
   margin-top: 0;
+  text-align: center;
 }
 
 hr {
@@ -69,7 +70,7 @@ hr {
   position: fixed;
   width: 94%;
   height: 90%;
-  top: 7%;
+  top: 5%;
   left: 3%;
   border: #1875d1 solid 2px;
   border-radius: 5px;
@@ -118,15 +119,6 @@ hr {
   outline: none;
 }
 
-#reg-modal::-webkit-scrollbar {
-  width: 0.3rem;
-}
-
-#reg-modal::-webkit-scrollbar-thumb {
-  background-color: #1875d1;
-  border-radius: 50px;
-}
-
 #reg-modal-collapse-btn:hover {
   background-color: #1875d1;
   color: #fff;
@@ -137,12 +129,15 @@ hr {
   margin-top: 5%;
 }
 
+
+
 @media (min-width: 1025px) {
-  #reg-modal {
+  #reg-modal, .modals {
     width: 50%;
     left: 25%;
   }
-  #reg-modal-header {
+  #reg-modal-header, .modal-header {
     width: 50%;
   }
 }
+

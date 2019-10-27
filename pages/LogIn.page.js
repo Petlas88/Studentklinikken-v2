@@ -2,6 +2,7 @@ const LogInPage = {
   template: `
     <div class="container">
         <!--REGISTRATION MODAL-->
+        <transition name="bounce">
         <div v-if="visibleMod" id="reg-modal">
             <div id="reg-modal-header">
                 <div @click="visibleMod=!visibleMod" id="reg-modal-collapse-btn">&#10006</div>
@@ -21,6 +22,7 @@ const LogInPage = {
                 <button id="reg-btn">Registrer deg</button>
             </div>
         </div>
+        </transition>
         <!--END REGISTRATION MODAL-->
         <div id="login-title-row" class="row">
             <div class="col-12">
@@ -69,7 +71,7 @@ const LogInPage = {
       let username = document.getElementById("username-input").value;
       let password = document.getElementById("password-input").value;
       for (let i = 0; i < this.users.length; i++) {
-        if (username == this.users[i].username) {
+        if (username.toLowerCase() == this.users[i].username) {
           if (password == this.users[i].password) {
             this.loggedIn = true;
           }
