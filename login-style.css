@@ -36,6 +36,11 @@
   outline: none;
 }
 
+#login-btn:hover {
+  transform: scale(1.01);
+  box-shadow: 0 5px 5px rgb(109, 109, 109)
+}
+
 #login-title-row {
   padding-top: 3rem;
   font-size: 1.3rem;

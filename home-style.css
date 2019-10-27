@@ -15,14 +15,19 @@
   border-radius: 5px;
 }
 
+#booking-btn:hover {
+  transform: scale(1.01);
+  box-shadow: 0 5px 5px rgb(109, 109, 109)
+}
+
 #home-footer {
   text-decoration: none;
   text-align: center;
   bottom: 0;
   left: 0;
   width: 100%;
-  position: absolute;
-  padding-bottom: 1%;
+  position: fixed;
+  padding-bottom: 2%;
 }
 
 .footer-links:hover {

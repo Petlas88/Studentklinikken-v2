@@ -20,6 +20,12 @@
   outline: none;
 }
 
+.button-element:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+  box-shadow: 0 5px 5px rgb(109, 109, 109)
+}
+
 .modals {
   display: flex;
   align-items: center;
