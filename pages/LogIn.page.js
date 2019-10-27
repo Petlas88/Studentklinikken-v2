@@ -34,7 +34,7 @@ const LogInPage = {
                 <h2><b>{{passTxt}}</b></h2></p>
                 <input type="password" class="login-input" id="password-input" placeholder="Passord"/>
                 <br/>
-                <button id="login-btn">Logg inn</button> 
+                <button id="login-btn" @click="checkInput">Logg inn</button>
                 <hr/>
                 <p>eller</p>
                 <hr/>
@@ -56,23 +56,36 @@ const LogInPage = {
         {
           username: "kek@kek.no",
           password: "kek123"
+        },
+        {
+          username: "bjarne@kek.no",
+          password: "bjarne"
         }
       ]
     };
   },
   methods: {
-    /* checkLogin() {
+  checkInput() {
       let username = document.getElementById("username-input").value;
-      let password = document.getElementById("passwor-input").value;
+      let password = document.getElementById("password-input").value;
       for (let i = 0; i < this.users.length; i++) {
         if (username == this.users[i].username) {
           if (password == this.users[i].password) {
             this.loggedIn = true;
-            console.log(this.loggedIn);
           }
         }
       }
-    }*/
+      this.validateLogin();
+
+    },
+  validateLogin() {
+    if(this.loggedIn == true) {
+      console.log("Logged in");
+    } else {
+      console.log("Fail");
+    }
+  }  
+  
   }
 };
 
