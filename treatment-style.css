@@ -7,7 +7,7 @@
 }
 
 .button-element {
-  border-radius: 5px;
+  border-radius: 50px;
   font-family: "Raleway", sans-serif;
   font-size: 1.3rem;
   font-weight: 300;
@@ -23,7 +23,7 @@
 .button-element:hover {
   cursor: pointer;
   transform: scale(1.01);
-  box-shadow: 0 5px 5px rgb(109, 109, 109)
+  box-shadow: 0 4px 4px rgb(109, 109, 109)
 }
 
 .modals {

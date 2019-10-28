@@ -8,7 +8,7 @@
   font-family: "Raleway", sans-serif;
   font-size: 1.5rem;
   font-weight: 300;
-  border-radius: 5px;
+  border-radius: 50px;
   margin: 0.5%;
   outline: none;
 }
@@ -16,7 +16,7 @@
 .prices-btns-clicked {
   background-color: #1875d1;
   transform: scale(1.07);
-  box-shadow: 0 5px 5px rgb(109, 109, 109)
+  box-shadow: 0 4px 4px rgb(109, 109, 109)
 }
 
 .prices-text {
