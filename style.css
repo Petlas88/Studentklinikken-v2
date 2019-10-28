@@ -20,17 +20,20 @@ body {
 }
 
 *::-webkit-scrollbar {
-widows: 1rem;
+  width: 0.6rem;
+  background-color: #1875d193;
+  border-image-repeat: 50px;
 }
 
 *::-webkit-scrollbar-thumb {
   background-color: #1875d1;
   border-radius: 50px;
-  width: 1rem;
+ 
 }
 
 *::-webkit-scrollbar-track {
-  background: none;
+  background-color: transparent;
+  border-radius: 50px;
 }
 
 #title-row {
@@ -40,10 +43,18 @@ widows: 1rem;
 }
 
 .slide-up-enter-active {
-  animation: slide-up .5s;
+  animation: slide-up .2s;
 }
 .slide-up-leave-active {
-  animation: slide-up .5s reverse;
+  animation: slide-up .2s reverse; 
+}
+
+.overlay-fade-enter-active {
+  animation: overlay-fade .1s;
+}
+
+.overlay-fade-leave-active {
+  animation: overlay-fade .1s reverse;
 }
 @keyframes slide-up {
   0% {
@@ -54,9 +65,19 @@ widows: 1rem;
   }
 }
 
+@keyframes overlay-fade {
+  0% {
+    background-color: #00000000;
+  }
+  100% {
+    background-color: #00000070;
+  }
+}
+
 @media (min-width: 1025px) {
   .container {
     border-right: 2px solid #1875d1;
     border-left: 2px solid #1875d1;
   }
 }
+

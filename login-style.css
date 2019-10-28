@@ -69,15 +69,30 @@ hr {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #ebebeb;
+  background-color: #00000070;
   position: fixed;
   width: 100vw;
   height: 100vh;
   left: 0;
-  top: 5px;
   z-index: 1;
 }
-
+#reg-modal-content {
+  overflow-y: auto;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+}
+#reg-modal-body {
+  width:100vw;
+  height: 99.5vh;
+  margin-top: 5px;
+  background-color: #ebebeb;
+}
 #reg-modal-body > p {
   padding-bottom: 0;
   margin-bottom: 5px;
@@ -89,6 +104,7 @@ hr {
 }
 
 #reg-modal-header {
+  text-align: center;
   display: flex;
   position: fixed;
   justify-content: flex-end;
@@ -140,12 +156,14 @@ hr {
   margin-top: 5%;
 }
 
-
-
 @media (min-width: 1025px) {
   #reg-modal, .modals {
+    width: 100vw;
+    top: 0;
+  }
+  #reg-modal-body {
     width: 50%;
-    left: 25%;
+    margin-top: 0;
   }
   #reg-modal-header, .modal-header {
     width: 50%;

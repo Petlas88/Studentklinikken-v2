@@ -2,25 +2,29 @@ const LogInPage = {
   template: `
     <div class="container">
         <!--REGISTRATION MODAL-->
-        <transition name="slide-up">
+        <transition name="overlay-fade" @after-enter="overlayActive = true">
         <div v-if="visibleMod" id="reg-modal">
-            <div id="reg-modal-header">
-                <div @click="visibleMod=!visibleMod" id="reg-modal-collapse-btn">&#10006</div>
+            <transition name="slide-up" @after-leave="visibleMod= false">
+            <div v-if="overlayActive" id="reg-modal-content">
+              <div id="reg-modal-header">
+                  <div @click="overlayActive = !overlayActive" id="reg-modal-collapse-btn">&#10006</div>
+              </div>
+              <div id="reg-modal-body">
+                  <h1 id="mod-title">{{modTitle}}</h1>
+                  <p id=full-name>Fullt navn</p>
+                  <input type="text" name="" class="reg-input" placeholder="Fullt navn" id="reg-name"/>
+                  <p>Fødselsdato</p>
+                  <input type="date" class="reg-input" placeholder="Fødselsdato" id="reg-dob"/>
+                  <p>E-post</p>
+                  <input type="email" class="reg-input" placeholder="E-post" id="reg-mail"/>
+                  <p>Passord</p>
+                  <input type="password" class="reg-input" placeholder="Passord" id="reg-pass"/>
+                  <p>Gjenta passord</p>
+                  <input type="password" class="reg-input" placeholder="Gjenta passord" id="reg-rep-pass"/>
+                  <button id="reg-btn">Registrer deg</button>
+              </div>
             </div>
-            <div id="reg-modal-body">
-                <h1 id="mod-title">{{modTitle}}</h1>
-                <p id=full-name>Fullt navn</p>
-                <input type="text" name="" class="reg-input" placeholder="Fullt navn" id="reg-name"/>
-                <p>Fødselsdato</p>
-                <input type="date" class="reg-input" placeholder="Fødselsdato" id="reg-dob"/>
-                <p>E-post</p>
-                <input type="email" class="reg-input" placeholder="E-post" id="reg-mail"/>
-                <p>Passord</p>
-                <input type="password" class="reg-input" placeholder="Passord" id="reg-pass"/>
-                <p>Gjenta passord</p>
-                <input type="password" class="reg-input" placeholder="Gjenta passord" id="reg-rep-pass"/>
-                <button id="reg-btn">Registrer deg</button>
-            </div>
+          </transition>
         </div>
         </transition>
         <!--END REGISTRATION MODAL-->
@@ -54,6 +58,7 @@ const LogInPage = {
       visibleMod: false,
       modTitle: "Registrer deg",
       loggedIn: false,
+      overlayActive: false, 
       users: [
         {
           username: "kek@kek.no",

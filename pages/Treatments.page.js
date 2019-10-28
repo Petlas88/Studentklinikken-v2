@@ -9,7 +9,7 @@ const TreatmentsPage = {
                     <h1>{{title}}</h1>
                 </div>    
             </div>
-            <transition name="bounce">
+            <transition name="slide-up">
             <div v-if="modalOneVisible" id="modal-one" class="modals" v-on-clickaway="hideModal">
                 <div class="modal-header">
                     <button class="modal-collapse-btn" @click="modalOneVisible = !modalOneVisible">&#10006</button>
@@ -48,7 +48,7 @@ const TreatmentsPage = {
             </div>
             </transition>
 
-            <transition name="bounce">
+            <transition name="slide-up">
             <div v-if="modalTwoVisible" id="modal-two" class="modals" v-on-clickaway="hideModal">
                 <div class="modal-header">
                     <button class="modal-collapse-btn" @click="modalTwoVisible = !modalTwoVisible">&#10006</button>
@@ -89,7 +89,7 @@ const TreatmentsPage = {
             </div>
             </transition>
 
-            <transition name="bounce">
+            <transition name="slide-up">
             <div v-if="modalThreeVisible" id="modal-three" class="modals" v-on-clickaway="hideModal">
                 <div class="modal-header">
                     <button class="modal-collapse-btn" @click="modalThreeVisible = !modalThreeVisible">&#10006</button>
@@ -114,7 +114,7 @@ const TreatmentsPage = {
             </div>
             </transition>
 
-            <transition name="bounce">
+            <transition name="slide-up">
             <div v-if="modalFourVisible" id="modal-four" class="modals" v-on-clickaway="hideModal">
                 <div class="modal-header">
                     <button class="modal-collapse-btn" @click="modalFourVisible = !modalFourVisible">&#10006</button>
