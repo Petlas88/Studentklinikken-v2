@@ -3,8 +3,9 @@ body {
   height: 100%;
   font-family: "Raleway", sans-serif;
   margin: 0;
-  overflow: hidden;
-  background:linear-gradient(135deg, #6df7b2 0%, #fff 100%)
+  overflow-x: hidden;
+  background:linear-gradient(135deg, #6df7b2 0%, #fff 100%);
+  background-attachment: fixed;
   
  
 }
@@ -15,17 +16,21 @@ body {
 .container {
   height: 100vh;
   text-align: center;
-  overflow-y: scroll;
   /* background: rgba(253, 253, 253, 0.425);*/
 }
 
 *::-webkit-scrollbar {
-  width: 0.3rem;
+widows: 1rem;
 }
 
 *::-webkit-scrollbar-thumb {
   background-color: #1875d1;
   border-radius: 50px;
+  width: 1rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: none;
 }
 
 #title-row {
@@ -34,23 +39,18 @@ body {
   font-size: 1.3rem;
 }
 
-.bounce-enter-active {
-  animation: bounce-in .5s;
+.slide-up-enter-active {
+  animation: slide-up .5s;
 }
-.bounce-leave-active {
-  animation: bounce-in .5s reverse;
+.slide-up-leave-active {
+  animation: slide-up .5s reverse;
 }
-@keyframes bounce-in {
+@keyframes slide-up {
   0% {
     top: 300%; 
   }
-  
-  80% {
-    top: 1%; 
-  }
-
   100% {
-    top: 5%
+    top: 2px
   }
 }
 

@@ -1,9 +1,8 @@
 .login-input {
   width: 70%;
-  line-height: 1.5rem;
-  padding: 0.3rem;
-  outline-color: #120a7c;
-  outline-width: thick;
+  line-height: 1rem;
+  padding: 0.2rem;
+  outline: none;
   border-radius: 4px;
   font-size: 1.3rem;
   border: #1875d1 2px solid;
@@ -11,12 +10,11 @@
 
 .reg-input {
   width: 70%;
-  line-height: 1.5rem;
-  padding: 0.3rem;
-  outline-color: #120a7c;
-  outline-width: thick;
+  line-height: 1rem;
+  padding: 0.2rem;
   border-radius: 4px;
   border: #1875d1 2px solid;
+  outline: none;
   font-size: 1.2rem;
 }
 
@@ -53,7 +51,6 @@
 #login-input-row {
   padding-top: 2%;
   height: 75%;
-  margin-top: 0;
   text-align: center;
 }
 
@@ -67,24 +64,28 @@ hr {
 }
 
 #reg-modal {
+  overflow-y: auto;
+  font-size: 1.3rem;
   display: flex;
   align-items: center;
   flex-direction: column;
   background-color: #ebebeb;
-  overflow-y: scroll;
   position: fixed;
-  width: 94%;
-  height: 90%;
-  top: 5%;
-  left: 3%;
-  border: #1875d1 solid 2px;
-  border-radius: 5px;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 5px;
   z-index: 1;
-  box-shadow: 0 10px 10px rgb(109, 109, 109);
 }
 
-#reg-modal-body {
-  width: 90%;
+#reg-modal-body > p {
+  padding-bottom: 0;
+  margin-bottom: 5px;
+
+}
+
+#full-name-txt {
+  margin-top: 20%;
 }
 
 #reg-modal-header {
@@ -92,7 +93,7 @@ hr {
   position: fixed;
   justify-content: flex-end;
   align-items: center;
-  width: 92%;
+  width: 100vw;
 }
 
 #reg-modal-collapse-btn {
@@ -109,7 +110,7 @@ hr {
 }
 
 #reg-btn {
-  margin-top: 1rem;
+  margin-top: 2rem;
   margin-bottom: 1rem;
   font-family: "Raleway", sans-serif;
   width: 50%;
@@ -123,6 +124,7 @@ hr {
   border-radius: 50px;
   outline: none;
 }
+
 
 #reg-btn:hover {
   box-shadow: 0 4px 4px rgb(109, 109, 109);
