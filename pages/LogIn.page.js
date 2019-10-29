@@ -11,17 +11,17 @@ const LogInPage = {
               </div>
               <div id="reg-modal-body">
                   <h1 id="mod-title">{{modTitle}}</h1>
-                  <p id=full-name>Fullt navn</p>
+                  <p class="input-labels" id=full-name>Fullt navn</p>
                   <input type="text" name="" class="reg-input" placeholder="Fullt navn" id="reg-name"/>
-                  <p>Fødselsdato</p>
+                  <p class="input-labels">Fødselsdato</p>
                   <input type="date" class="reg-input" placeholder="Fødselsdato" id="reg-dob"/>
-                  <p>E-post</p>
+                  <p class="input-labels">E-post</p>
                   <input type="email" class="reg-input" placeholder="E-post" id="reg-mail"/>
-                  <p>Passord</p>
+                  <p class="input-labels">Passord</p>
                   <input type="password" class="reg-input" placeholder="Passord" id="reg-pass"/>
-                  <p>Gjenta passord</p>
+                  <p class="input-labels">Gjenta passord</p>
                   <input type="password" class="reg-input" placeholder="Gjenta passord" id="reg-rep-pass"/>
-                  <button id="reg-btn">Registrer deg</button>
+                  <button id="reg-btn" class="login-modal-btns">Registrer deg</button>
               </div>
             </div>
           </transition>
@@ -34,13 +34,13 @@ const LogInPage = {
             </div>
         </div>
         <div id="login-input-row" class="row">
-            <div class="col-12">
-                <h2><b>{{userTxt}}</b></h2>
+            <div id="login-input-col" class="col-12">
+                <h2 class="input-labels"><b>{{userTxt}}</b></h2>
                 <input type="text" class="login-input" id="username-input" placeholder="Brukernavn(e-post)"/>
-                <h2><b>{{passTxt}}</b></h2>
+                <h2 class="input-labels"><b>{{passTxt}}</b></h2>
                 <input type="password" class="login-input" id="password-input" placeholder="Passord"/>
                 <br/>
-                <button id="login-btn" @click="checkInput">Logg inn</button>
+                <button id="login-btn" class="login-modal-btns" @click="checkInput">Logg inn</button>
                 <hr/>
                 <p>eller</p>
                 <hr/>

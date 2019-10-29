@@ -5,9 +5,6 @@ body {
   margin: 0;
   overflow-x: hidden;
   background: linear-gradient(135deg, #6df7b2 0%, #fff 100%);
-  
-  
- 
 }
 
 .row {
@@ -56,6 +53,29 @@ body {
 .overlay-fade-leave-active {
   animation: overlay-fade .1s reverse;
 }
+
+/* PLACEHOLDER */
+::-webkit-input-placeholder {
+  color: #000;
+  opacity: 0.4;
+  -webkit-transition: opacity 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out;
+}
+
+/* PLACEHOLDER HOVER */
+:hover::-webkit-input-placeholder {
+  opacity: 0.75;
+  -webkit-transition: opacity 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out;
+}
+
+/*PLACEHOLDER FOCUS*/
+:focus::-webkit-input-placeholder {
+  opacity: 0;
+  -webkit-transition: opacity 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out;
+}
+
 @keyframes slide-up {
   0% {
     top: 300%; 
