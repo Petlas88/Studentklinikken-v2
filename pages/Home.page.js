@@ -1,6 +1,6 @@
 const HomePage = {
   template: `
-      <div id="home-cont" class="container">
+      <div id="home-cont" class="container-fluid">
           <div id="title-row" class="row">
               <div class="col-12">
                   <h1>{{title}}</h1>

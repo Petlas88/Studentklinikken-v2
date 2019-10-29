@@ -10,7 +10,7 @@ body {
 .row {
   height: 30vh;
 }
-.container {
+.container-fluid {
   height: 100vh;
   text-align: center;
   /* background: rgba(253, 253, 253, 0.425);*/

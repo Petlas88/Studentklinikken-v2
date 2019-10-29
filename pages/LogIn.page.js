@@ -1,6 +1,6 @@
 const LogInPage = {
   template: `
-    <div id="login-cont" class="container">
+    <div id="login-cont" class="container-fluid">
         <!--REGISTRATION MODAL-->
         <transition name="overlay-fade" @after-enter="overlayActive = true">
         <div v-if="visibleMod" id="reg-modal">

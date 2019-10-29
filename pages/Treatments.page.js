@@ -3,7 +3,7 @@ const TreatmentsPage = {
   mixins: [VueClickaway.mixin],
   template: `
         
-        <div class="container">
+        <div class="container-fluid">
             <div id="title-row" class="row">
                 <div class="col-12">
                     <h1>{{title}}</h1>

@@ -7,7 +7,7 @@
 }
 
 .button-element {
-  border-radius: 50px;
+  border-radius: 10px;
   font-family: "Raleway", sans-serif;
   font-size: 1.3rem;
   font-weight: 300;
@@ -16,7 +16,7 @@
   margin-bottom: 2%;
   border: none;
   height: 5rem;
-  width: 80%;
+  width: 20rem;
   outline: none;
 }
 
