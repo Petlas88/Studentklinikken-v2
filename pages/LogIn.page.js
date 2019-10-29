@@ -1,6 +1,6 @@
 const LogInPage = {
   template: `
-    <div class="container">
+    <div id="login-cont" class="container">
         <!--REGISTRATION MODAL-->
         <transition name="overlay-fade" @after-enter="overlayActive = true">
         <div v-if="visibleMod" id="reg-modal">
@@ -21,7 +21,8 @@ const LogInPage = {
                   <input type="password" class="reg-input" placeholder="Passord" id="reg-pass"/>
                   <p class="input-labels">Gjenta passord</p>
                   <input type="password" class="reg-input" placeholder="Gjenta passord" id="reg-rep-pass"/>
-                  <button id="reg-btn" class="login-modal-btns">Registrer deg</button>
+                  <br/>
+                  <button id="reg-btn" class="login-modal-btns">Registrer</button>
               </div>
             </div>
           </transition>
@@ -35,11 +36,15 @@ const LogInPage = {
         </div>
         <div id="login-input-row" class="row">
             <div id="login-input-col" class="col-12">
-                <h2 class="input-labels"><b>{{userTxt}}</b></h2>
-                <input type="text" class="login-input" id="username-input" placeholder="Brukernavn(e-post)"/>
-                <h2 class="input-labels"><b>{{passTxt}}</b></h2>
-                <input type="password" class="login-input" id="password-input" placeholder="Passord"/>
+                <p class="input-labels" >{{userTxt}}</p>
+                <input type="text" class="login-input" :class="{'error-class': logInFailed}" id="username-input" placeholder="Brukernavn(e-post)" v-model="username"/>
+                <p class="input-labels">{{passTxt}}</p>
+                <input type="password" class="login-input" :class="{'error-class': logInFailed}" id="password-input" placeholder="Passord" v-model="password"/>
                 <br/>
+                <div id="error-div" v-if="logInFailed">
+                <p id="login-error-message"><b>{{loginErrorMessage}}</b></p>
+                </div>
+                
                 <button id="login-btn" class="login-modal-btns" @click="checkInput">Logg inn</button>
                 <hr/>
                 <p>eller</p>
@@ -57,7 +62,9 @@ const LogInPage = {
       passTxt: "Passord",
       visibleMod: false,
       modTitle: "Registrer deg",
+      loginErrorMessage:"Feil brukernavn eller passord",
       loggedIn: false,
+      logInFailed: false,
       overlayActive: false, 
       users: [
         {
@@ -73,14 +80,15 @@ const LogInPage = {
   },
   methods: {
   checkInput() {
-      let username = document.getElementById("username-input").value;
-      let password = document.getElementById("password-input").value;
       for (let i = 0; i < this.users.length; i++) {
-        if (username.toLowerCase() == this.users[i].username) {
-          if (password == this.users[i].password) {
+        if (this.username == this.users[i].username) {
+          if (this.password == this.users[i].password) {
             this.loggedIn = true;
-          }
+          } 
+        } else {
+          this.logInFailed = true;
         }
+        
       }
       this.validateLogin();
 
@@ -90,8 +98,10 @@ const LogInPage = {
       console.log("Logged in");
     } else {
       console.log("Fail");
+      
+      
     }
-  }  
+  }
   
   }
 };

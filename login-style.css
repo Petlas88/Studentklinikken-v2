@@ -1,7 +1,19 @@
+#login-cont {
+  background-color: #fff;
+  background-image: url(/img/bg.svg);
+  background-position-x: right;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+  background-size: 100vw;
+
+  width: 100vw;
+  
+}
+
 .login-input, .reg-input {
   width: 21rem;
   line-height: 1rem;
-  padding: 0.2rem;
+  height: 3.2rem;
   padding-left: 0.8rem;
   outline: none;
   font-size: 1.3rem;
@@ -30,7 +42,7 @@
   background-color: #1875d1;
   font-size: 1.3rem;
   font-weight: 300;
-  border-radius: 50px;
+  border-radius: 10px;
   outline: none;
 }
 
@@ -53,9 +65,27 @@
   height: 75%;
   text-align: center;
 }
+#error-div {
+  background-color: #000000b6;
+  color: #ff0000;
+  padding: 0.5rem;
+  text-align: center;
+  margin: 4% auto;
+  width: 95%;
+  border: 2px #ff0000 solid;
+  border-radius: 3px;
+}
+.error-class {
+border-color: red;
+background-color: rgb(250, 184, 184);
+animation: beat .5s;
+}
+
+
 
 .input-labels {
   margin-bottom: .4rem;
+  font-size: 1.3rem;
 }
 
 hr {
@@ -68,7 +98,7 @@ hr {
 }
 
 #reg-modal {
-  font-size: 1.3rem;
+  
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -81,8 +111,6 @@ hr {
 }
 
 #reg-modal-content {
-  overflow-y: auto;
-  font-size: 1.3rem;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -96,7 +124,8 @@ hr {
   overflow-y: auto;
   width: 100vw;
   height: 100vh;
-  margin-top: 9%;
+  margin: auto;
+  margin-top: 10%;
   background-color: #ebebeb;
 }
 
@@ -158,6 +187,15 @@ hr {
   margin-top: 5%;
 }
 
+@keyframes beat {
+  0%, 50% {
+    transform: scale(1.03);
+  }
+  25%, 100% {
+    transform: scale(1);
+  }
+}
+
 @media (min-width: 1025px) {
   #reg-modal, .modals {
     width: 100vw;
@@ -170,6 +208,9 @@ hr {
   #reg-modal-header, .modal-header {
     width: 50%;
     margin-top: 0;
+  }
+  #login-cont {
+    background-size: cover;
   }
 }
 

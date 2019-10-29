@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.6, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 1024" style="enable-background:new 0 0 512 1024;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#95E3AD;}
+	.st1{fill:#80CF9B;}
+	.st2{fill:none;stroke:#FC6565;stroke-width:45;stroke-linecap:round;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#FC7C7C;stroke-width:45;stroke-linecap:round;stroke-miterlimit:10;}
+	.st4{opacity:0.3;fill:none;stroke:#FFFFFF;stroke-width:10;stroke-linecap:round;stroke-miterlimit:10;}
+	.st5{fill:#C9C9C9;}
+	.st6{fill:#EAEAEA;}
+	.st7{fill:#EAEAEA;stroke:#C9C9C9;stroke-width:10;stroke-miterlimit:10;}
+	.st8{fill:none;stroke:#FFFFFF;stroke-width:10;stroke-linecap:round;stroke-miterlimit:10;}
+</style>
+<g id="Layer_1">
+	<path class="st0" d="M-53.05,785c0-226.44,361.9-559,558.15-559s152.54,332.56,152.54,559s-159.09,410-355.35,410
+		S-53.05,1011.44-53.05,785z"/>
+	<path class="st1" d="M-126,912.78c0-226.44,361.9-559,558.15-559s152.54,332.56,152.54,559s-159.09,410-355.35,410
+		S-126,1139.22-126,912.78z"/>
+	<path class="st0" d="M-62.41,1240.47c0-226.44,361.9-559,558.15-559s152.54,332.56,152.54,559s-125.69,346-321.95,346
+		S-62.41,1466.91-62.41,1240.47z"/>
+</g>
+<g id="Layer_3">
+	<path class="st2" d="M278.91,674.64c-29.37,72.81-17.08,149.71,29,191c63.64,57.02,181.87,37.31,218-18
+		c64.39-98.56-164.73-259.98-130-450c25.4-138.95,179.87-227.45,304-280"/>
+	<path class="st3" d="M271.5,672.5c-29.37,72.81-17.08,149.71,29,191c63.64,57.02,181.87,37.31,218-18
+		c64.39-98.56-164.73-259.98-130-450c25.4-138.95,179.87-227.45,304-280"/>
+	<path class="st4" d="M271,827c9,30,48.12,64.5,80,72c34,8,58.99,8.61,68,7"/>
+</g>
+<g id="Layer_2">
+	<circle class="st5" cx="286" cy="610" r="111"/>
+	<circle class="st6" cx="274" cy="610" r="111"/>
+	<circle class="st7" cx="270.65" cy="609.57" r="61.57"/>
+	<path class="st8" d="M324,532c2.73,0.93,19.03,6.78,25,23c2.15,5.85,2.29,11.22,2,15"/>
+	<path class="st4" d="M431,284c-5.2,2.96-53.03,76.77-53,141c0.01,16.92,3.58,62.53,9,74"/>
+</g>
+</svg>
