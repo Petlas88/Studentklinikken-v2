@@ -10,7 +10,7 @@ const LogInPage = {
                   <div @click="overlayActive = !overlayActive" id="reg-modal-collapse-btn">&#10006</div>
               </div>
               <div id="reg-modal-body">
-                  <h1 id="mod-title">{{modTitle}}</h1>
+                  <h1 id="mod-title">Registrer deg</h1>
                   <p class="input-labels" id=full-name>Fullt navn</p>
                   <input type="text" name="" class="reg-input" placeholder="Fullt navn" id="reg-name"/>
                   <p class="input-labels">Fødselsdato</p>
@@ -36,9 +36,9 @@ const LogInPage = {
         </div>
         <div id="login-input-row" class="row">
             <div id="login-input-col" class="col-12">
-                <p class="input-labels" >{{userTxt}}</p>
+                <p class="input-labels" >Brukernavn</p>
                 <input type="text" class="login-input" :class="{'error-class': logInFailed}" id="username-input" placeholder="Brukernavn(e-post)" v-model="username"/>
-                <p class="input-labels">{{passTxt}}</p>
+                <p class="input-labels">Passord</p>
                 <input type="password" class="login-input" :class="{'error-class': logInFailed}" id="password-input" placeholder="Passord" v-model="password"/>
                 <br/>
                 <div id="error-div" v-if="logInFailed">
@@ -63,9 +63,10 @@ const LogInPage = {
       visibleMod: false,
       modTitle: "Registrer deg",
       loginErrorMessage:"Feil brukernavn eller passord",
-      loggedIn: false,
       logInFailed: false,
-      overlayActive: false, 
+      overlayActive: false,
+      username: '',
+      password: '',
       users: [
         {
           username: "kek@kek.no",
@@ -78,30 +79,25 @@ const LogInPage = {
       ]
     };
   },
+  props: {
+    isLoggedIn: Boolean
+  },
   methods: {
   checkInput() {
       for (let i = 0; i < this.users.length; i++) {
         if (this.username == this.users[i].username) {
           if (this.password == this.users[i].password) {
-            this.loggedIn = true;
+            this.$emit('logged-in-change', true)
+            this.$router.push('/home')
+      
           } 
         } else {
           this.logInFailed = true;
         }
         
       }
-      this.validateLogin();
 
-    },
-  validateLogin() {
-    if(this.loggedIn == true) {
-      console.log("Logged in");
-    } else {
-      console.log("Fail");
-      
-      
     }
-  }
   
   }
 };
