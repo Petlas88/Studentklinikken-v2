@@ -58,10 +58,7 @@ const LogInPage = {
     `,
   data() {
     return {
-      userTxt: "Brukernavn",
-      passTxt: "Passord",
       visibleMod: false,
-      modTitle: "Registrer deg",
       loginErrorMessage:"Feil brukernavn eller passord",
       logInFailed: false,
       overlayActive: false,
