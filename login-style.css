@@ -1,5 +1,5 @@
 #login-cont {
-  background-color: #fff;
+  background-color: #c6e1eb;
   /* background-image: url(/img/bg.svg); */
   background-image: url("bg.svg");
   background-position-x: right;
@@ -67,14 +67,14 @@
   text-align: center;
 }
 #error-div {
-  background-color: #000000b6;
+  background-color: #ffffffb6;
   color: #ff0000;
   padding: 0.5rem;
   text-align: center;
-  margin: 4% auto;
-  width: 95%;
+  margin: .3rem auto;
+  width: 20rem;
   border: 2px #ff0000 solid;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 .error-class {
 border-color: red;
