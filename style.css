@@ -5,7 +5,13 @@ body {
   font-family: "Raleway", sans-serif;
   margin: 0;
   overflow: hidden;
-  background: linear-gradient(135deg, #6df7b2 0%, #fff 100%);
+  background-image: url("Test6.svg");
+  background-position-x: right;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-color: #c6e1eb;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .row {
@@ -98,9 +104,8 @@ body {
 }
 
 @media (min-width: 1025px) {
-  .container {
-    border-right: 2px solid #1875d1;
-    border-left: 2px solid #1875d1;
+  .container-fluid {
+
   }
 }
 
