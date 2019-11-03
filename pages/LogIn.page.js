@@ -12,17 +12,17 @@ const LogInPage = {
               <div id="reg-modal-body">
                   <h1 id="mod-title">Registrer deg</h1>
                   <p class="input-labels" id=full-name>Fullt navn</p>
-                  <input type="text" name="" class="reg-input" placeholder="Fullt navn" id="reg-name"/>
+                  <input type="text" name="" class="reg-input" :class="{'error-class' : invalidFullName}" placeholder="Fullt navn" id="reg-name" v-model="fullName"/>
                   <p class="input-labels">Fødselsdato</p>
-                  <input type="date" class="reg-input" placeholder="Fødselsdato" id="reg-dob"/>
+                  <input type="date" class="reg-input" placeholder="Fødselsdato" id="reg-dob" v-model ="birthdate"/>
                   <p class="input-labels">E-post</p>
-                  <input type="email" class="reg-input" placeholder="E-post" id="reg-mail"/>
+                  <input type="email" class="reg-input" placeholder="E-post" id="reg-mail" v-model="username"/>
                   <p class="input-labels">Passord</p>
-                  <input type="password" class="reg-input" placeholder="Passord" id="reg-pass"/>
+                  <input type="password" class="reg-input" placeholder="Passord" id="reg-pass" v-model="password"/>
                   <p class="input-labels">Gjenta passord</p>
-                  <input type="password" class="reg-input" placeholder="Gjenta passord" id="reg-rep-pass"/>
+                  <input type="password" class="reg-input" placeholder="Gjenta passord" id="reg-rep-pass" v-model="repPassword"/>
                   <br/>
-                  <button id="reg-btn" class="login-modal-btns">Registrer</button>
+                  <button id="reg-btn" class="login-modal-btns" @click="checkRegInput">Registrer</button>
               </div>
             </div>
           </transition>
@@ -62,14 +62,20 @@ const LogInPage = {
       loginErrorMessage:"Feil brukernavn eller passord",
       logInFailed: false,
       overlayActive: false,
+      invalidFullname: false, 
+      fullName: '',
+      birthdate: '',
       username: '',
       password: '',
+      repPassword: '',
       users: [
-        {
+        { 
+          fullName: "Kekemeister Keksen",
           username: "kek@kek.no",
           password: "kek123"
         },
         {
+          fullName: "Bjarne Brøndbo",
           username: "bjarne@kek.no",
           password: "bjarne"
         }
@@ -94,9 +100,18 @@ const LogInPage = {
         
       }
 
+    },
+    checkRegInput() {
+      if (this.fullName.length > 2) {
+        this.users.push(this.fullName);
+      } else {
+        this.invalidFullname = true
+      }
+      
     }
-  
+    
   }
+  
 };
 
 export default LogInPage;

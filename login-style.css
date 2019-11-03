@@ -82,6 +82,9 @@ background-color: rgb(250, 184, 184);
 animation: beat .5s;
 }
 
+.valid-input {
+  border-color: rgb(2, 207, 2);
+}
 
 
 .input-labels {
