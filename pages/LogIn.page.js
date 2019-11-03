@@ -101,7 +101,7 @@ const LogInPage = {
       }
 
     },
-    checkRegInput() {
+  checkRegInput() {
       if (this.fullName.length > 2) {
         this.users.push(this.fullName);
       } else {
