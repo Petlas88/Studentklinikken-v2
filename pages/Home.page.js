@@ -15,7 +15,7 @@ const HomePage = {
           </div>
           <div id="link-row" class="row">
               <div class="col-12">
-                  <router-link to="my-orders" class="home-links">Mine bestillinger</router-link> <br> 
+                  <router-link to="orders" class="home-links">Mine bestillinger</router-link> <br> 
                   <br>
                   <router-link to="prices" class="home-links">Priser</router-link> <br>
                   <br>
