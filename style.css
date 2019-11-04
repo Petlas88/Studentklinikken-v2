@@ -1,10 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap");
+
 body {
   height: 100%;
   font-family: "Raleway", sans-serif;
   margin: 0;
-  overflow-x: hidden;
-  background: linear-gradient(135deg, #6df7b2 0%, #fff 100%);
+  overflow: hidden;
+  background-image: url("Test6.svg");
+  background-position-x: right;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-color: #c6e1eb;
+  background-size: cover;
 }
 
 .row {
@@ -13,6 +19,8 @@ body {
 .container-fluid {
   height: 100vh;
   text-align: center;
+  overflow-y: auto;
+  overflow-x: hidden;
   /* background: rgba(253, 253, 253, 0.425);*/
 }
 
@@ -95,9 +103,8 @@ body {
 }
 
 @media (min-width: 1025px) {
-  .container {
-    border-right: 2px solid #1875d1;
-    border-left: 2px solid #1875d1;
+  .container-fluid {
+
   }
 }
 

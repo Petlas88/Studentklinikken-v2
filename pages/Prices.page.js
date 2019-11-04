@@ -8,9 +8,9 @@ const PricesPage = {
           </div>
           <div class="row">
               <div id="prices-btn-row" class="col-12">
-                <button class="prices-btns" @click="showOrdinary = !showOrdinary, showDiscount = false" :class="{'prices-btns-clicked': showOrdinary}">{{ordinaryPriceBtn}}
+                <button class="prices-btns" @click="showOrdinary = !showOrdinary, showDiscount = false" :class="{'prices-btns-clicked': showOrdinary}">Ordinær
                 </button> 
-                <button class="prices-btns" @click="showDiscount = !showDiscount, showOrdinary = false" :class="{'prices-btns-clicked': showDiscount}">{{discPriceBtn}}
+                <button class="prices-btns" @click="showDiscount = !showDiscount, showOrdinary = false" :class="{'prices-btns-clicked': showDiscount}">Rabatt*
                 </button>
                 <div id="ordinary-price-text" class="prices-text" v-if="showOrdinary"><p v-for="value in ordinaryPrice">{{value}}</p></div>
                 <div id="discount-price-text" class="prices-text" v-if="showDiscount"><p v-for="value in discPrice">{{value}}</p></div>
@@ -21,13 +21,11 @@ const PricesPage = {
       `,
   data() {
     return {
-      ordinaryPriceBtn: "Ordinær",
       ordinaryPrice: {
         firstTreatment: "Første behandling 300,-",
         nextTreatment: "Oppfølgende behandling 220,-"
       },
       showOrdinary: false,
-      discPriceBtn: "Rabatt*",
       discPrice: {
         firstTreatment: "Første behandling 150,-",
         nextTreatment: "Oppfølgende behandling 100,-"

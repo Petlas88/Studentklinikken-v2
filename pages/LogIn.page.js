@@ -10,19 +10,19 @@ const LogInPage = {
                   <div @click="overlayActive = !overlayActive" id="reg-modal-collapse-btn">&#10006</div>
               </div>
               <div id="reg-modal-body">
-                  <h1 id="mod-title">{{modTitle}}</h1>
+                  <h1 id="mod-title">Registrer deg</h1>
                   <p class="input-labels" id=full-name>Fullt navn</p>
-                  <input type="text" name="" class="reg-input" placeholder="Fullt navn" id="reg-name"/>
+                  <input type="text" name="" class="reg-input" :class="{'error-class' : invalidFullName}" placeholder="Fullt navn" id="reg-name" v-model="fullName"/>
                   <p class="input-labels">Fødselsdato</p>
-                  <input type="date" class="reg-input" placeholder="Fødselsdato" id="reg-dob"/>
+                  <input type="date" class="reg-input" placeholder="Fødselsdato" id="reg-dob" v-model ="birthdate"/>
                   <p class="input-labels">E-post</p>
-                  <input type="email" class="reg-input" placeholder="E-post" id="reg-mail"/>
+                  <input type="email" class="reg-input" placeholder="E-post" id="reg-mail" v-model="username"/>
                   <p class="input-labels">Passord</p>
-                  <input type="password" class="reg-input" placeholder="Passord" id="reg-pass"/>
+                  <input type="password" class="reg-input" placeholder="Passord" id="reg-pass" v-model="password"/>
                   <p class="input-labels">Gjenta passord</p>
-                  <input type="password" class="reg-input" placeholder="Gjenta passord" id="reg-rep-pass"/>
+                  <input type="password" class="reg-input" placeholder="Gjenta passord" id="reg-rep-pass" v-model="repPassword"/>
                   <br/>
-                  <button id="reg-btn" class="login-modal-btns">Registrer</button>
+                  <button id="reg-btn" class="login-modal-btns" @click="checkRegInput">Registrer</button>
               </div>
             </div>
           </transition>
@@ -36,9 +36,9 @@ const LogInPage = {
         </div>
         <div id="login-input-row" class="row">
             <div id="login-input-col" class="col-12">
-                <p class="input-labels" >{{userTxt}}</p>
+                <p class="input-labels" >Brukernavn</p>
                 <input type="text" class="login-input" :class="{'error-class': logInFailed}" id="username-input" placeholder="Brukernavn(e-post)" v-model="username"/>
-                <p class="input-labels">{{passTxt}}</p>
+                <p class="input-labels">Passord</p>
                 <input type="password" class="login-input" :class="{'error-class': logInFailed}" id="password-input" placeholder="Passord" v-model="password"/>
                 <br/>
                 <div id="error-div" v-if="logInFailed">
@@ -58,52 +58,60 @@ const LogInPage = {
     `,
   data() {
     return {
-      userTxt: "Brukernavn",
-      passTxt: "Passord",
       visibleMod: false,
-      modTitle: "Registrer deg",
       loginErrorMessage:"Feil brukernavn eller passord",
-      loggedIn: false,
       logInFailed: false,
-      overlayActive: false, 
+      overlayActive: false,
+      invalidFullname: false, 
+      fullName: '',
+      birthdate: '',
+      username: '',
+      password: '',
+      repPassword: '',
       users: [
-        {
+        { 
+          fullName: "Kekemeister Keksen",
           username: "kek@kek.no",
           password: "kek123"
         },
         {
+          fullName: "Bjarne Brøndbo",
           username: "bjarne@kek.no",
           password: "bjarne"
         }
       ]
     };
   },
+  props: {
+    isLoggedIn: Boolean
+  },
   methods: {
   checkInput() {
       for (let i = 0; i < this.users.length; i++) {
         if (this.username == this.users[i].username) {
           if (this.password == this.users[i].password) {
-            this.loggedIn = true;
+            this.$emit('logged-in-change', true)
+            this.$router.push('/home')
+      
           } 
         } else {
           this.logInFailed = true;
         }
         
       }
-      this.validateLogin();
 
     },
-  validateLogin() {
-    if(this.loggedIn == true) {
-      console.log("Logged in");
-    } else {
-      console.log("Fail");
-      
+  checkRegInput() {
+      if (this.fullName.length > 2) {
+        this.users.push(this.fullName);
+      } else {
+        this.invalidFullname = true
+      }
       
     }
+    
   }
   
-  }
 };
 
 export default LogInPage;
