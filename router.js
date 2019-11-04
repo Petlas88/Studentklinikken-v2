@@ -40,7 +40,8 @@ const router = new VueRouter({
     {
     path: "/employees",
     component: EmployeesPage
-  }
+    }
+  ]
 });
 
 export default router;
