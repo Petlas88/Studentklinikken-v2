@@ -4,7 +4,7 @@ new Vue({
   el: "#app",
   router: router,
   components: {
-    vuejsDatepicker
+    
   }
 
 });
