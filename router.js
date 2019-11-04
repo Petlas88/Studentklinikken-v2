@@ -4,6 +4,7 @@ import PricesPage from "./pages/Prices.page.js";
 import BookingPage from "./pages/Booking.page.js";
 import TreatmentsPage from "./pages/Treatments.page.js";
 import RightsPage from "./pages/Rights.page.js";
+import ContactPage from "./pages/Contact.page.js";
 import EmployeesPage from "./pages/Employees.page.js";
 
 const router = new VueRouter({
@@ -33,9 +34,13 @@ const router = new VueRouter({
       component: RightsPage
     },
     {
-      path: "/employees",
+      path: "/contact",
+      component: ContactPage
+    },
+    {
+    path: "/employees",
     component: EmployeesPage
-  }
+    }
   ]
 });
 

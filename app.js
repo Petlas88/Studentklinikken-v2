@@ -15,7 +15,6 @@ new Vue({
     }
   },
   components: {
-    vuejsDatepicker
   },
   watch: {
     isLoggedIn() {
