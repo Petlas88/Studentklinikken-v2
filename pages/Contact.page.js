@@ -1,11 +1,10 @@
 const ContactPage = {
     template: `
-    <div id="map"></div>
+    <div id="container">
+        <div id="map">
+        </div>
+    </div>
 
-    <script>
-        var number = 1+1;
-        console.log(number);
-    </script>
     `
 }
 
