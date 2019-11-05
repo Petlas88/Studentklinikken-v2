@@ -2,11 +2,13 @@
 
 const BookingPage = {
   template: `
-    <h1>Select Date</h1>
-
-    <div id="app">
+    <div class="container-fluid">
+      <h1>Select Date</h1>
       <v-calendar></v-calendar>
-    </div>
+
+  </div>
+    
+    
   `
  
 };
