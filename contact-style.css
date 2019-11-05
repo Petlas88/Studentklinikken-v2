@@ -1,0 +1,11 @@
+.contact-row {
+    height: 30vh;
+}
+
+#call-button {
+    color: red;
+}
+
+#placeholder-option {
+    display: none;
+}

@@ -57,7 +57,7 @@ const RightsPage = {
                     <button class="button-element" @click="modalOneVisible = !modalOneVisible">{{modalOneTitle}}</button>
                     <button class="button-element" @click="modalTwoVisible = !modalTwoVisible">{{modalTwoTitle}}</button>
                 </div>
-            </div> 
+            </div>
         </div>
     
     `,
