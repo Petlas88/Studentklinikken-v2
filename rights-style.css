@@ -1,7 +1,19 @@
-.button-element {
-    height: 20vh;
+.rights-button-element {
+    border-radius: 10px;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: #fff;
+    background-color: #1875d1;
+    margin-bottom: 2%;
+    border: none;
+    height: 10rem;
+    width: 20rem;
+    outline: none;
 }
 
-.rights-row {
+#text-row {
     height: 20vh;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
   }

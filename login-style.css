@@ -238,7 +238,7 @@ hr {
     width: 100vw;
     top: 0;
   }
-  #reg-modal-body {
+  #reg-modal-body, .modals-body {
     width: 50%;
     margin-top: 0;
   }

@@ -2,12 +2,12 @@ const RightsPage = {
     template: `
         
         <div class="container-fluid">
-            <div id="title-row" class="rights-row">
+            <div id="title-row" class="row">
                 <div class="col-12">
                     <h1>{{title}}</h1>
                 </div>    
             </div>
-            <div id="text-row" class="rights-row">
+            <div id="text-row" class="row">
                 <p>
                 Vi forholder oss til en rekke lover og regler som ivaretar dine pasientrettigheter. Våre studenter må samtykke til å følge dette lovverket før de starter sin kliniske praksisperiode.
                 Under følger en oversikt over de mest relevante bestemmelsen for deg som pasient ved Studentklinikken tilhørende Institutt for Helsevitenskap.
@@ -52,10 +52,10 @@ const RightsPage = {
                 </div>
             </div>
             </transition>
-            <div id="trtmnt-btn-row" class="rights-row">   
+            <div id="rights-btn-row" class="row">   
                 <div id="buttons-container" class="col-12">
-                    <button class="button-element" @click="modalOneVisible = !modalOneVisible">{{modalOneTitle}}</button>
-                    <button class="button-element" @click="modalTwoVisible = !modalTwoVisible">{{modalTwoTitle}}</button>
+                    <button class="rights-button-element" @click="modalOneVisible = !modalOneVisible">{{modalOneTitle}}</button>
+                    <button class="rights-button-element" @click="modalTwoVisible = !modalTwoVisible">{{modalTwoTitle}}</button>
                 </div>
             </div>
         </div>

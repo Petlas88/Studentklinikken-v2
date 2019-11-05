@@ -9,42 +9,47 @@ const TreatmentsPage = {
                     <h1>{{title}}</h1>
                 </div>    
             </div>
-            <transition name="slide-up">
+            
+            <transition name="overlay-fade" @after-enter="overlayActive = true">
             <div v-if="modalOneVisible" id="modal-one" class="modals" v-on-clickaway="hideModal">
-                <div class="modal-header">
-                    <button class="modal-collapse-btn" @click="modalOneVisible = !modalOneVisible">&#10006</button>
-                </div>
-                <div class="modals-body">
-                    <br><br>
-                    <h4>Akupunktur er en persontilpasset behandling der
-                    diagnostikk, behandling og oppfølging er skreddersydd for
-                    hver pasient med sine unike særtrekk og behov under hvert
-                    trinn av behandlingen.
-                    </h4><br>
+            <transition name="slide-up" @after-leave="modalOneVisible= false">
+                <div v-if="overlayActive" class="modals-content">
+                    <div class="modal-header">
+                        <button class="modal-collapse-btn" @click="overlayActive = !overlayActive">&#10006</button>
+                    </div>
+                    <div class="modals-body">
+                        <br><br>
+                        <h4>Akupunktur er en persontilpasset behandling der
+                        diagnostikk, behandling og oppfølging er skreddersydd for
+                        hver pasient med sine unike særtrekk og behov under hvert
+                        trinn av behandlingen.
+                        </h4><br>
 
-                    <p>&#8226; Kronisk smerte</p>
-                    <p>&#8226; Migrene og hodepine</p>
-                    <p>&#8226; Lettere angst og depresjon</p>
-                    <p>&#8226; Stress</p>
-                    <p>&#8226; Allergi</p>
-                    <p>&#8226; Kvinnehelse</p>
-                    <p>&#8226; Fordøyelsesproblematikk</p>
-                    <p>&#8226; Søvnproblemer</p><br>
+                        <p>&#8226; Kronisk smerte</p>
+                        <p>&#8226; Migrene og hodepine</p>
+                        <p>&#8226; Lettere angst og depresjon</p>
+                        <p>&#8226; Stress</p>
+                        <p>&#8226; Allergi</p>
+                        <p>&#8226; Kvinnehelse</p>
+                        <p>&#8226; Fordøyelsesproblematikk</p>
+                        <p>&#8226; Søvnproblemer</p><br>
 
-                    <p>Enkelt fortalt virker akupunktur ved å stimulere perifere
-                    nerver og bindevev som frigjør signalstofer som
-                    har en efekt på det sentrale nervesystemet. Disse
-                    signalstofene regulerer områder i hjernen som blant
-                    annet påvirker det autonome nervesystemet.
-                    Akupunktøren vil i førstegangskonsultasjonen ha fokus
-                    på å få oversikt over symptomer og årsaksforhold. I
-                    behandlingen settes tynne nåler i spesifikke punkter
-                    på kroppen. I tillegg kan det gis annen behandling, for
-                    eksempel kopping-massasje eller varmende behandling.
-                    Det gis veiledning om kosthold og fysisk aktivitet når
-                    dette er aktuelt.
-                    </p>
+                        <p>Enkelt fortalt virker akupunktur ved å stimulere perifere
+                        nerver og bindevev som frigjør signalstofer som
+                        har en efekt på det sentrale nervesystemet. Disse
+                        signalstofene regulerer områder i hjernen som blant
+                        annet påvirker det autonome nervesystemet.
+                        Akupunktøren vil i førstegangskonsultasjonen ha fokus
+                        på å få oversikt over symptomer og årsaksforhold. I
+                        behandlingen settes tynne nåler i spesifikke punkter
+                        på kroppen. I tillegg kan det gis annen behandling, for
+                        eksempel kopping-massasje eller varmende behandling.
+                        Det gis veiledning om kosthold og fysisk aktivitet når
+                        dette er aktuelt.
+                        </p>
+                    </div>
                 </div>
+                </transition>
             </div>
             </transition>
 
@@ -201,7 +206,8 @@ const TreatmentsPage = {
       modalOneTitle: "Akupunktur",
       modalTwoTitle: "Osteopati",
       modalThreeTitle: "Kostholdsveiledning",
-      modalFourTitle: "Fysiologisk testlab"
+      modalFourTitle: "Fysiologisk testlab",
+      overlayActive: false
     };
   },
 
