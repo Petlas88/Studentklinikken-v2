@@ -12,7 +12,7 @@ const LogInPage = {
               <div id="reg-modal-body">
                   <h1 id="mod-title">Registrer deg</h1>
                   <p class="input-labels" id=full-name>Fullt navn</p>
-                  <input type="text" name="" class="reg-input" :class="{'error-class' : invalidFullName}" placeholder="Fullt navn" id="reg-name" v-model="fullName"/>
+                  <input type="text" name="" class="reg-input"  placeholder="Fullt navn" id="reg-name" v-model="fullName"/>
                   <p class="input-labels">Fødselsdato</p>
                   <input type="date" class="reg-input" placeholder="Fødselsdato" id="reg-dob" v-model ="birthdate"/>
                   <p class="input-labels">E-post</p>
@@ -22,12 +22,17 @@ const LogInPage = {
                   <p class="input-labels">Gjenta passord</p>
                   <input type="password" class="reg-input" placeholder="Gjenta passord" id="reg-rep-pass" v-model="repPassword"/>
                   <br/>
-                  <button id="reg-btn" class="login-modal-btns" @click="checkRegInput">Registrer</button>
+                  <button id="reg-btn" class="login-modal-btns" @click="checkRegInput()">Registrer</button>
               </div>
             </div>
           </transition>
         </div>
         </transition>
+        <transition name="popUp">
+          <div v-if="regSuccessful" id="reg-confirmation-box"><p>Registrering<br>fullført!</p><p id="check-mark">&check;</p></div>
+        </transition>
+
+        
         <!--END REGISTRATION MODAL-->
         <div id="login-title-row" class="row">
             <div class="col-12">
@@ -68,6 +73,7 @@ const LogInPage = {
       username: '',
       password: '',
       repPassword: '',
+      regSuccessful: false,
       users: [
         { 
           fullName: "Kekemeister Keksen",
@@ -102,8 +108,12 @@ const LogInPage = {
 
     },
   checkRegInput() {
-      if (this.fullName.length > 2) {
-        this.users.push(this.fullName);
+      if (this.fullName.length > 2 && this.username.length > 5) {
+        this.users.push({fullName: this.fullName, username: this.username, password: this.password});
+        //console.log(this.users);
+        this.visibleMod = false;
+        this.regSuccessful = true;
+        setTimeout(() => this.regSuccessful = false, 2000);
       } else {
         this.invalidFullname = true
       }
@@ -115,3 +125,5 @@ const LogInPage = {
 };
 
 export default LogInPage;
+
+//:class="{'error-class' : invalidFullName}"

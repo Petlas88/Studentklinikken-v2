@@ -6,6 +6,7 @@ import TreatmentsPage from "./pages/Treatments.page.js";
 import RightsPage from "./pages/Rights.page.js";
 import ContactPage from "./pages/Contact.page.js";
 import EmployeesPage from "./pages/Employees.page.js";
+import OrdersPage from "./pages/Orders.page.js";
 
 const router = new VueRouter({
   routes: [
@@ -40,7 +41,11 @@ const router = new VueRouter({
     {
     path: "/employees",
     component: EmployeesPage
-    }
+    },
+    {
+      path: "/orders",
+      component: OrdersPage
+    },
   ]
 });
 
