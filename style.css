@@ -163,4 +163,5 @@ input:focus, textarea:focus {
 .dark {
   background-color: #121212;
   color: white;
+  transition: 1s ease;
 }

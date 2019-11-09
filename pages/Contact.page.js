@@ -25,11 +25,12 @@ const ContactPage = {
                         <option>Klage</option>
                     </select>
                     <p>Din melding</p>
-                    <textarea name="" id="" cols="35" rows="10" placeholder="Skriv din melding her"></textarea>
-                    <button id="contact-send-btn">Send</button>
+                    <textarea name="" id="" cols="35" rows="10" placeholder="Skriv din melding her"></textarea> <br/>
+                    <button id="contact-send-btn">Send</button> <br/>
+                    <button @click="darkMode = !darkMode">Toggle Dark Mode</button>
                 </div>
             </div>
-            <button @click="darkModeToggle()">Toggle Dark Mode</button>
+            
     </div>
     
     `,
@@ -41,13 +42,13 @@ data() {
     };
 },
 methods: {
-    darkModeToggle() {
-        if(this.darkMode) {
-            this.darkMode = false;
-        } else {
-            this.darkMode = true;
-        }
-    }
+    // darkModeToggle() {
+    //     if(this.darkMode) {
+    //         this.darkMode = false;
+    //     } else {
+    //         this.darkMode = true;
+    //     }
+    // }
 }
 };
 export default ContactPage;
