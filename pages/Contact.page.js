@@ -1,6 +1,6 @@
 const ContactPage = {
     template: `
-    <div class="container-fluid">
+    <div class="container-fluid" v-bind:class="[darkMode ? 'dark' : '']">
             <div id="title-row" class="row">
                 <div class="col-12">
                     <h1>{{title}}</h1>
@@ -29,13 +29,25 @@ const ContactPage = {
                     <button id="contact-send-btn">Send</button>
                 </div>
             </div>
+            <button @click="darkModeToggle()">Toggle Dark Mode</button>
     </div>
+    
     `,
 
 data() {
     return {
-        title: "Kontakt oss"
+        title: "Kontakt oss",
+        darkMode: false
     };
+},
+methods: {
+    darkModeToggle() {
+        if(this.darkMode) {
+            this.darkMode = false;
+        } else {
+            this.darkMode = true;
+        }
+    }
 }
 };
 export default ContactPage;
