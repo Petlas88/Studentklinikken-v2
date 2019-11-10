@@ -19,7 +19,7 @@ const RightsPage = {
                 <div class="modal-header">
                     <button class="modal-collapse-btn" @click="modalOneVisible = !modalOneVisible">&#10006</button>
                 </div>
-                <div class="modals-body">
+                <div class="modals-body" v-bind:class="{'modal-dark': this.darkModeActive}">>
                     <br><br>
 
                     <p>Studenter i praksis skal praktisere i henhold til gjeldene lovverk.
@@ -35,7 +35,7 @@ const RightsPage = {
                 <div class="modal-header">
                     <button class="modal-collapse-btn" @click="modalTwoVisible = !modalTwoVisible">&#10006</button>
                 </div>
-                <div class="modals-body">
+                <div class="modals-body" v-bind:class="{'modal-dark': this.darkModeActive}">>
                     <br><br>
                     <p>Vi registrerer, behandler og lagrer personopplysninger om pasienter i henhold til pasientjournalloven, personvernforordningen (GDPR), personopplysningsloven, helsepersonelloven.
                     <br> <br>
@@ -70,6 +70,15 @@ const RightsPage = {
         modalOneTitle: "Hvordan vi ivaretar din sikkerhet",
         modalTwoTitle: "Hvordan vi behandler dine personopplysninger",
       };
+    },
+    props: {
+        darkModeActive: Boolean
+    },
+    methods: {
+        checkDarkMode() {
+        console.log("clicked" + this.darkModeClicked)
+        this.$emit('dark-mode-change', this.darkModeClicked)   
+    }
     }
   
   

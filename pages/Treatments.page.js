@@ -11,13 +11,13 @@ const TreatmentsPage = {
             </div>
             
             <transition name="overlay-fade" @after-enter="overlayActive = true">
-            <div v-if="modalOneVisible" id="modal-one" class="modals" v-on-clickaway="hideModal">
+            <div v-if="modalOneVisible" id="modal-one" class="modals"  v-on-clickaway="hideModal">
                 <transition name="slide-up" @after-leave="modalOneVisible= false">
-                <div v-if="overlayActive" class="modals-content">
+                <div v-if="overlayActive" class="modals-content"">
                     <div class="modal-header">
                         <button class="modal-collapse-btn" @click="overlayActive = !overlayActive">&#10006</button>
                     </div>
-                    <div class="modals-body">
+                    <div class="modals-body" v-bind:class="{'modal-dark': this.darkModeActive}">
                         <br><br>
                         <h4>Akupunktur er en persontilpasset behandling der
                         diagnostikk, behandling og oppfølging er skreddersydd for
@@ -60,7 +60,7 @@ const TreatmentsPage = {
                         <div class="modal-header">
                             <button class="modal-collapse-btn" @click="overlayActive = !overlayActive">&#10006</button>
                         </div>
-                        <div class="modals-body">
+                        <div class="modals-body" v-bind:class="{'modal-dark': this.darkModeActive}">>
                             <br><br>
                             <h4>En osteopat undersøker og behandler muskel- og
                             skjelettsmerter med manuelle behandlingsteknikker
@@ -105,7 +105,7 @@ const TreatmentsPage = {
                     <div class="modal-header">
                         <button class="modal-collapse-btn" @click="overlayActive = !overlayActive">&#10006</button>
                     </div>
-                    <div class="modals-body">
+                    <div class="modals-body" v-bind:class="{'modal-dark': this.darkModeActive}">>
                         <br><br>
                         <h4>Veiledning passer ypperlig for deg
                         som ønsker å forebygge sykdom,
@@ -134,7 +134,7 @@ const TreatmentsPage = {
                     <div class="modal-header">
                         <button class="modal-collapse-btn" @click="overlayActive = !overlayActive">&#10006</button>
                     </div>
-                    <div class="modals-body">
+                    <div class="modals-body" v-bind:class="{'modal-dark': this.darkModeActive}">>
                         <br><br>
                         <h4>Høyskolen Kristianias fysiologiske testlaboratorium er et topp moderne
                         laboratorium som brukes til undervisning og forskning.
