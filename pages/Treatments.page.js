@@ -203,6 +203,7 @@ const TreatmentsPage = {
                     <button class="button-element" @click="modalFourVisible = !modalFourVisible, modalIsVisible = !modalIsVisible">{{modalFourTitle}}</button>  
                 </div>
             </div> 
+            <dark-mode-toggler @click.native="darkModeClicked = !darkModeClicked, checkDarkMode()" :class="{'dark-mode-toggler-dark': darkModeActive}"></dark-mode-toggler>
         </div>
     
     `,
@@ -219,17 +220,24 @@ const TreatmentsPage = {
       modalTwoTitle: "Osteopati",
       modalThreeTitle: "Kostholdsveiledning",
       modalFourTitle: "Fysiologisk testlab",
-      overlayActive: false
+      overlayActive: false,
+      darkModeClicked: false
     };
   },
-
+  props: {
+    darkModeActive: Boolean
+},
   methods: {
     hideModal() {
         this.modalOneVisible = false;
         this.modalTwoVisible = false;
         this.modalThreeVisible = false;
         this.modalFourVisible = false;
-    }
+    },
+    checkDarkMode() {
+        console.log("clicked" + this.darkModeClicked)
+            this.$emit('dark-mode-change', this.darkModeClicked)   
+}
   }
 
 

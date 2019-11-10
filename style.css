@@ -24,6 +24,22 @@ body {
   /* background: rgba(253, 253, 253, 0.425);*/
 }
 
+.dark-mode-toggler {
+  height: 2.5rem;
+  width: 2.5rem; 
+  background-color: #000000;
+  border-radius: 50px;
+  position: relative;
+}
+
+.dark-mode-toggler-dark {
+  height: 2.5rem;
+  width: 2.5rem; 
+  background-color: #e41111;
+  border-radius: 50px;
+  position: relative;
+}
+
 select {
   height: 3.2rem;
   width: 21rem;
@@ -161,7 +177,13 @@ input:focus, textarea:focus {
 }
 
 .dark {
-  background-color: #121212;
+  background-color: #332d2d;
   color: white;
   transition: 1s ease;
+  background-image: url("Test6Dark.svg");
 }
+
+.back-to-light {
+  transition: 1s ease;
+}
+

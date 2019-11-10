@@ -27,7 +27,7 @@ const ContactPage = {
                     <p>Din melding</p>
                     <textarea name="" id="" cols="35" rows="10" placeholder="Skriv din melding her"></textarea> <br/>
                     <button id="contact-send-btn">Send</button> <br/>
-                    <button @click="darkMode = !darkMode">Toggle Dark Mode</button>
+                    <!-- <button @click="darkMode = !darkMode">Toggle Dark Mode</button> -->
                 </div>
             </div>
             
@@ -38,7 +38,7 @@ const ContactPage = {
 data() {
     return {
         title: "Kontakt oss",
-        darkMode: false
+        // darkMode: false
     };
 },
 methods: {

@@ -8,7 +8,7 @@ new Vue({
   data() {
     return {
       isLoggedIn: false,
-      darkMode: true
+      darkModeActive: false
     }
   },
   methods: {
@@ -16,12 +16,8 @@ new Vue({
       console.log(value)
       this.isLoggedIn = value
     },
-    darkModeToggle() {
-      if(this.darkMode) {
-        this.darkMode = false;
-      } else {
-        this.darkMode = true;
-      }
+    darkModeToggle(value) {
+      this.darkModeActive = value
     }
   },
   components: {
@@ -32,6 +28,15 @@ new Vue({
       if (!this.isLoggedIn) {
         this.$router.push('/')
       }
+    }, 
+    darkModeActive() {
+      console.log(this.darkModeActive)
+      if (this.darkModeActive) {
+        document.body.classList.add("dark")
+      } else {
+        document.body.classList.remove("dark")
+        document.body.classList.add("back-to-light")
+      }     
     }
   }
 })

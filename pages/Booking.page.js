@@ -4,8 +4,6 @@ const BookingPage = {
   template: `
     <div class="container-fluid">
       <h1>Select Date</h1>
-      <v-calendar></v-calendar>
-
   </div>
     
     

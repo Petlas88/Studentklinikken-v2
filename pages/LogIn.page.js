@@ -98,7 +98,6 @@ const LogInPage = {
           if (this.password == this.users[i].password) {
             this.$emit('logged-in-change', true)
             this.$router.push('/home')
-      
           } 
         } else {
           this.logInFailed = true;

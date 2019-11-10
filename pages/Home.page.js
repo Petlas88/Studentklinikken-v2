@@ -15,21 +15,33 @@ const HomePage = {
           </div>
           <div id="link-row" class="row">
               <div class="col-12">
-                  <router-link to="orders" class="home-links">Mine bestillinger</router-link> <br> 
+                  <router-link to="orders" class="home-links" :class="{'home-links-dark': darkModeActive}">Mine bestillinger</router-link> <br> 
                   <br>
-                  <router-link to="prices" class="home-links">Priser</router-link> <br>
+                  <router-link to="prices" class="home-links" :class="{'home-links-dark': darkModeActive}" >Priser</router-link> <br>
                   <br>
-                  <router-link to="treatments" class="home-links">Våre behandlinger</router-link>
+                  <router-link to="treatments" class="home-links" :class="{'home-links-dark': darkModeActive}">Våre behandlinger</router-link>
               </div>
           </div>
-          <div id="home-footer"><router-link to="rights" class="footer-links">Rettigheter</router-link> | <router-link to="contact" class="footer-links">Kontakt oss</router-link></div>
+          <div id="home-footer"><router-link to="rights" class="footer-links" :class="{'footer-links-dark': darkModeActive}">Rettigheter</router-link> | <router-link to="contact" class="footer-links" :class="{'footer-links-dark': darkModeActive}">Kontakt oss</router-link>
+        </div>
+          <dark-mode-toggler @click.native="darkModeClicked = !darkModeClicked, checkDarkMode()" :class="{'dark-mode-toggler-dark': darkModeActive}"></dark-mode-toggler>
       </div>
       `,
   data() {
     return {
-      title: "Studentklinikken"
+      title: "Studentklinikken",
+      darkModeClicked: false
     };
-  }
+  },
+    props: {
+        darkModeActive: Boolean
+    },
+    methods: {
+        checkDarkMode() {
+            console.log("clicked" + this.darkModeClicked)
+                this.$emit('dark-mode-change', this.darkModeClicked)   
+    }
+}
 };
 
 export default HomePage;

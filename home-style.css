@@ -41,6 +41,11 @@
   color: black;
 }
 
+.footer-links-dark {
+  text-decoration: none;
+  color: #fff;
+}
+
 .home-links {
   text-decoration: none;
   color: black;
@@ -50,3 +55,10 @@
 .home-links:hover {
   color: #1875d1;
 }
+
+.home-links-dark {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.6rem;
+}
+
