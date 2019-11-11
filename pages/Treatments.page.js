@@ -60,7 +60,7 @@ const TreatmentsPage = {
                         <div class="modal-header">
                             <button class="modal-collapse-btn" @click="overlayActive = !overlayActive">&#10006</button>
                         </div>
-                        <div class="modals-body" v-bind:class="{'modal-dark': this.darkModeActive}">>
+                        <div class="modals-body" v-bind:class="{'modal-dark': this.darkModeActive}">
                             <br><br>
                             <h4>En osteopat undersøker og behandler muskel- og
                             skjelettsmerter med manuelle behandlingsteknikker
@@ -105,7 +105,7 @@ const TreatmentsPage = {
                     <div class="modal-header">
                         <button class="modal-collapse-btn" @click="overlayActive = !overlayActive">&#10006</button>
                     </div>
-                    <div class="modals-body" v-bind:class="{'modal-dark': this.darkModeActive}">>
+                    <div class="modals-body" v-bind:class="{'modal-dark': this.darkModeActive}">
                         <br><br>
                         <h4>Veiledning passer ypperlig for deg
                         som ønsker å forebygge sykdom,
@@ -134,7 +134,7 @@ const TreatmentsPage = {
                     <div class="modal-header">
                         <button class="modal-collapse-btn" @click="overlayActive = !overlayActive">&#10006</button>
                     </div>
-                    <div class="modals-body" v-bind:class="{'modal-dark': this.darkModeActive}">>
+                    <div class="modals-body" v-bind:class="{'modal-dark': this.darkModeActive}">
                         <br><br>
                         <h4>Høyskolen Kristianias fysiologiske testlaboratorium er et topp moderne
                         laboratorium som brukes til undervisning og forskning.
