@@ -13,7 +13,7 @@ const TreatmentsPage = {
             <transition name="overlay-fade" @after-enter="overlayActive = true">
             <div v-if="modalOneVisible" id="modal-one" class="modals"  v-on-clickaway="hideModal">
                 <transition name="slide-up" @after-leave="modalOneVisible= false">
-                <div v-if="overlayActive" class="modals-content"">
+                <div v-if="overlayActive" class="modals-content">
                     <div class="modal-header">
                         <button class="modal-collapse-btn" @click="overlayActive = !overlayActive">&#10006</button>
                     </div>
