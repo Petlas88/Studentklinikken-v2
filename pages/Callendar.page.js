@@ -3,7 +3,7 @@ const CallendarPage = {
         <div class="container-fluid">
             <div id="title-row" class="row">
                 <div class="col-12">
-                    <h1>{{callendarTitle}}</h1>
+                    <h3>{{callendarTitle}}</h3>
                     <div id="calendar-container">
                         <div v-for="(day, index) in calendarDays" @click = "selectedDay = index, hoursVisible = true" class="dateCells">
                         {{dayNames[day.date.getDay()]}}<br>{{day.date.getDate()}}<br>{{monthNames[day.date.getMonth()]}}
