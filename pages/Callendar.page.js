@@ -82,16 +82,18 @@ methods: {
             console.log("Iteration " + i);
         }
 
-        this.calendarDays[1].hours[2].booked = true;
-        this.calendarDays[1].hours[3].booked = true;
-        this.calendarDays[2].hours[2].booked = true;
-        this.calendarDays[5].hours[2].booked = true;
+        for(let i = 0; i < 240; i++) {
+        this.calendarDays[Math.floor(Math.random() * 30)].hours[Math.floor(Math.random() * 8)].booked = true;
+        }
     },
 
-    showConfirm() {
-        
+    showConfirm($event) {
+        if (this.calendarDays[this.selectedDay].hours[this.selectedHour].booked == false) {
         this.confModalVisible = true; 
         this.faderVisible = true;
+        } else {
+            return;
+        }
     }
 
     
