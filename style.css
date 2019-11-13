@@ -253,9 +253,9 @@ input:focus, textarea:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 90%;
+  height: 110%;
   width: 95%;
-  top: 2%;
+  top: 1%;
   left: 0;
   right: 0;
   margin: 0 auto;
