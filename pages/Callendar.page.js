@@ -4,7 +4,6 @@ const CallendarPage = {
             <div id="title-row" class="row">
                 <div class="col-12">
                     <h1>{{callendarTitle}}</h1>
-                    <button @click = "populateCalendar">Test</button>
                     <div id="calendar-container">
                         <div v-for="(day, index) in calendarDays" @click = "selectedDay = index, hoursVisible = true" class="dateCells">
                         {{dayNames[day.date.getDay()]}}<br>{{day.date.getDate()}}<br>{{monthNames[day.date.getMonth()]}}
@@ -99,11 +98,17 @@ methods: {
     
 
     
+},
+
+created: function() {
+    this.populateCalendar()
 }
 
 
 
 }
+
+
 
 export default CallendarPage;
 
