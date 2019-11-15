@@ -73,7 +73,7 @@ textarea {
 }
 
  input:hover, textarea:hover {
-  border-color: #f00505a8 ;
+  border-color: #000000a8;
   transition: 0.35s ease-in-out;
 }
 
@@ -195,8 +195,6 @@ input:focus, textarea:focus {
   transition: 1s ease;
 }
 
-<<<<<<< HEAD
-=======
 .dateCells {
   display: flex;
   flex-direction: column;
@@ -207,7 +205,14 @@ input:focus, textarea:focus {
   min-width: 3em;
   min-height: 5em;
   margin: 0 .5em;
-  background-color: cadetblue;
+  background-color: #95E3AD;
+  border: 2px solid #1875d1;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.dateCells-dark {
+  background-color: #1875d1;
 }
 
 #calendar-container {
@@ -217,9 +222,9 @@ input:focus, textarea:focus {
   overflow-y: hidden;
 }
 
-::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
+#calendar-container::-webkit-scrollbar {
+  height: 0.2rem;
+  background: none;
 }
 
 #hours-container {
@@ -256,6 +261,7 @@ input:focus, textarea:focus {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
 }
 
 #confirmation-modal, #confirmed-order-modal {
@@ -263,9 +269,9 @@ input:focus, textarea:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 90%;
+  height: 50%;
   width: 95%;
-  top: 2%;
+  top: 25%;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -305,4 +311,3 @@ input:focus, textarea:focus {
   text-decoration: none;
 }
 
->>>>>>> parent of 88ca6df... Add minor responivity tweak to styles

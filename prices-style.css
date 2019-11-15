@@ -7,7 +7,7 @@
   cursor: pointer;
   color: #fff;
   border: none;
-  background-color: #666666;
+  background-color: #665e5e;
   font-family: "Raleway", sans-serif;
   font-size: 1.3rem;
   font-weight: 300;
@@ -30,6 +30,10 @@
   width: 20rem;
   border: 1px #1875d1 solid;
   border-radius: 3px;
+}
+
+.prices-text-dark {
+  background-color: #665e5e;
 }
 
 @media (orientation: landscape) {

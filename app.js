@@ -18,6 +18,7 @@ new Vue({
     },
     darkModeToggle(value) {
       this.darkModeActive = value
+      console.log(this.darkModeActive)
     }
   },
   components: {
@@ -35,10 +36,6 @@ new Vue({
         document.body.classList.add("dark")
         var modals = document.getElementsByClassName("modals")
         console.log(modals)
-        for(var i = 0; i < modals.length; i++) {
-          console.log("reached")
-          modals[i].classList.add("dark")
-        }
       } else {
         document.body.classList.remove("dark")
         document.body.classList.add("back-to-light")

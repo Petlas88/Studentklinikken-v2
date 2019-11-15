@@ -12,8 +12,8 @@ const PricesPage = {
                 </button> 
                 <button class="prices-btns" @click="showDiscount = !showDiscount, showOrdinary = false" :class="{'prices-btns-clicked': showDiscount}">Rabatt*
                 </button>
-                <div id="ordinary-price-text" class="prices-text" v-if="showOrdinary"><p v-for="value in ordinaryPrice">{{value}}</p></div>
-                <div id="discount-price-text" class="prices-text" v-if="showDiscount"><p v-for="value in discPrice">{{value}}</p></div>
+                <div id="ordinary-price-text" class="prices-text" :class="{'prices-text-dark': darkModeActive}" v-if="showOrdinary"><p v-for="value in ordinaryPrice">{{value}}</p></div>
+                <div id="discount-price-text" class="prices-text" :class="{'prices-text-dark': darkModeActive}" v-if="showDiscount"><p v-for="value in discPrice">{{value}}</p></div>
                 <div><p v-for="value in priceInfo">{{value}}</p></div>
               </div>    
           </div>
@@ -39,7 +39,10 @@ const PricesPage = {
           "*Rabatten gjelder: Honnør over 60 år, ungdom under 18 år, studenter og HK ansatte"
       }
     };
-  }
+  },
+  props: {
+    darkModeActive: Boolean
+}
 };
 
 export default PricesPage;
