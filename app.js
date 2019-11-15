@@ -34,8 +34,6 @@ new Vue({
       //console.log(this.darkModeActive)
       if (this.darkModeActive) {
         document.body.classList.add("dark")
-        var modals = document.getElementsByClassName("modals")
-        console.log(modals)
       } else {
         document.body.classList.remove("dark")
         document.body.classList.add("back-to-light")
