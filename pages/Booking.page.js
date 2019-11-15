@@ -4,7 +4,6 @@ const BookingPage = {
   template: `
     <div class="container-fluid">
       <h1>Select Date</h1>
-      <router-link to="callendar" class="home-links" @click = "populateCalendar" >Test</router-link>
   </div>
     
     

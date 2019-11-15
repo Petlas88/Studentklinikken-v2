@@ -7,7 +7,6 @@ import RightsPage from "./pages/Rights.page.js";
 import ContactPage from "./pages/Contact.page.js";
 import EmployeesPage from "./pages/Employees.page.js";
 import OrdersPage from "./pages/Orders.page.js";
-import CallendarPage from "./pages/Callendar.page.js";
 import app from "./app.js"
 
 const router = new VueRouter({
@@ -47,10 +46,6 @@ const router = new VueRouter({
     {
       path: "/orders",
       component: OrdersPage
-    },
-    {
-      path: "/callendar",
-      component: CallendarPage
     },
   ]
 });
