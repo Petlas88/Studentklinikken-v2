@@ -9,8 +9,8 @@ const ContactPage = {
             <div id="contact-input-row" class="row">
                 <div class="col-12">
                     <h3>Ring oss</h3>
-                    <form id="call-button" action="tel: +47 92820670">
-                    <button id="call-btn" type="submit" value="971 17 690">971 17 690</button>
+                    <form id="call-button" action="tel:97117690">
+                    <button id="call-btn" >971 17 690</button>
                     </form>
                     <br><br>            
                     <p>Ditt navn</p>
