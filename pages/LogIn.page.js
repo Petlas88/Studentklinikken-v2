@@ -29,6 +29,18 @@ const LogInPage = {
         </div>
         </transition>
         <transition name="popUp">
+          <div v-if="invalidFullname" id="reg-confirmation-box"><p>Ufullstendig<br>navn</p><p id="x-mark">X</p></div>
+        </transition>
+        <transition name="popUp">
+          <div v-if="invalidEmail" id="reg-confirmation-box"><p>Ugyldig<br> epostadresse</p><p id="x-mark">X</p></div>
+        </transition>
+        <transition name="popUp">
+          <div v-if="invalidPasswordLength" id="reg-confirmation-box"><p>Passord må være<br>8 karakterer langt</p><p id="x-mark">X</p></div>
+        </transition>
+        <transition name="popUp">
+          <div v-if="invalidRepPassword" id="reg-confirmation-box"><p>Passord <br>samstemmer ikke</p><p id="x-mark">X</p></div>
+        </transition>
+        <transition name="popUp">
           <div v-if="regSuccessful" id="reg-confirmation-box"><p>Registrering<br>fullført!</p><p id="check-mark">&check;</p></div>
         </transition>
 
@@ -57,8 +69,7 @@ const LogInPage = {
                 <h2 @click="visibleMod = !visibleMod" id="reg-link">Registrer deg</h2>
                 <router-link to="home">-></router-link>
             </div>
-        </div>
-        
+        </div>  
     </div>
     `,
   data() {
@@ -68,6 +79,10 @@ const LogInPage = {
       logInFailed: false,
       overlayActive: false,
       invalidFullname: false, 
+      invalidPasswordLength: false,
+      invalidRepPassword: false,
+      invalidEmail: false,
+      emailRegex: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
       fullName: '',
       birthdate: '',
       username: '',
@@ -78,12 +93,12 @@ const LogInPage = {
         { 
           fullName: "Kekemeister Keksen",
           username: "kek@kek.no",
-          password: "kek123"
+          password: "kek123456"
         },
         {
           fullName: "Bjarne Brøndbo",
           username: "bjarne@kek.no",
-          password: "bjarne"
+          password: "bjarne123"
         }
       ]
     };
@@ -107,14 +122,29 @@ const LogInPage = {
 
     },
   checkRegInput() {
-      if (this.fullName.length > 2 && this.username.length > 5) {
-        this.users.push({fullName: this.fullName, username: this.username, password: this.password});
-        //console.log(this.users);
-        this.visibleMod = false;
-        this.regSuccessful = true;
-        setTimeout(() => this.regSuccessful = false, 2000);
+      if (this.fullName.length > 3) {
+        if(this.emailRegex.test(this.username)) {
+          if(this.password.length >= 8 && this.repPassword.length >= 8) {  
+            if(this.password == this.repPassword) {
+              this.users.push({fullName: this.fullName, username: this.username, password: this.password});
+              this.visibleMod = false;
+              this.regSuccessful = true;
+              setTimeout(() => this.regSuccessful = false, 2000);
+            } else {
+              this.invalidRepPassword = true;
+              setTimeout(() => this.invalidRepPassword = false, 2000);
+            }
+          } else {
+            this.invalidPasswordLength = true;
+            setTimeout(() => this.invalidPasswordLength = false, 2000);
+          }
+        } else {
+            this.invalidEmail = true;
+            setTimeout(() => this.invalidEmail = false, 2000);
+        }
       } else {
-        this.invalidFullname = true
+        this.invalidFullname = true;
+        setTimeout(() => this.invalidFullname = false, 2000);
       }
       
     }
@@ -124,5 +154,3 @@ const LogInPage = {
 };
 
 export default LogInPage;
-
-//:class="{'error-class' : invalidFullName}"

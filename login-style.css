@@ -222,6 +222,12 @@ hr {
   margin: 0;
 }
 
+#x-mark {
+  color: red;
+  font-size: 2em;
+  margin: 0;
+}
+
 @keyframes beat {
   0%, 50% {
     transform: scale(1.03);
