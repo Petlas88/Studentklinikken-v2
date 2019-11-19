@@ -8,6 +8,10 @@ import ContactPage from "./pages/Contact.page.js";
 import EmployeesPage from "./pages/Employees.page.js";
 import OrdersPage from "./pages/Orders.page.js";
 import CallendarPage from "./pages/Callendar.page.js";
+import AkuCalendarPage from "./pages/AkuCalendar.page.js";
+import OstCalendarPage from "./pages/OstCalendar.page.js";
+import KostCalendarPage from "./pages/KostCalendar.page.js";
+import FysCalendarPage from "./pages/FysCalendar.page.js";
 import app from "./app.js"
 
 const router = new VueRouter({
@@ -51,6 +55,22 @@ const router = new VueRouter({
     {
       path: "/callendar",
       component: CallendarPage
+    },
+    {
+      path: "/akucalendar",
+      component: AkuCalendarPage
+    },
+    {
+      path: "/ostcalendar",
+      component: OstCalendarPage
+    },
+    {
+      path: "/kostcalendar",
+      component: KostCalendarPage
+    },
+    {
+      path: "/fyscalendar",
+      component: FysCalendarPage
     },
   ]
 });
