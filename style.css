@@ -311,3 +311,8 @@ input:focus, textarea:focus {
   text-decoration: none;
 }
 
+.cellSelected {
+  background-color: #1875d1;
+  color: white;
+}
+

@@ -7,7 +7,7 @@ const OstCalendarPage = {
                     <h3>{{callendarTitle}}</h3>
                     <!--<button @click = "populateCalendar">Test</button>-->
                     <div id="calendar-container">
-                        <div v-for="(day, index) in calendarDays" @click = "selectedDay = index, hoursVisible = true" class="dateCells" :class="{'dateCells-dark': darkModeActive}">
+                        <div v-for="(day, index) in calendarDays" @click = "selectedDay = index, hoursVisible = true, highlight()" class="dateCells" :class="{'dateCells-dark': darkModeActive, cellSelected:calendarDays[index].clicked}">
                         {{dayNames[day.date.getDay()]}}<br>{{day.date.getDate()}}<br>{{monthNames[day.date.getMonth()]}}
                         </div>
                     </div>
@@ -102,7 +102,19 @@ methods: {
         } else {
             return;
         }
-    }  
+    },
+
+    highlight() {
+        for(let i = 0; i < this.calendarDays.length; i++) {
+            if(i == this.selectedDay) {
+                this.calendarDays[this.selectedDay].clicked = true;
+                
+            } else {
+                this.calendarDays[i].clicked = false;
+            }
+            
+        }
+    }
 },
 created: function() {
     this.populateCalendar()
