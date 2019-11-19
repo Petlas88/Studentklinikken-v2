@@ -314,5 +314,6 @@ input:focus, textarea:focus {
 .cellSelected {
   background-color: #1875d1;
   color: white;
+  transition: background-color .3s;
 }
 

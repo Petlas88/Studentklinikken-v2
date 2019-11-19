@@ -67,6 +67,9 @@ data() {
         confModalVisible: false,
         orderModalVisible: false,
         currentUser: "test bruker",
+        year: new Date().getFullYear(),
+        month: new Date().getMonth(),
+        date: new Date().getDate(),
         
 
     }
@@ -80,10 +83,10 @@ methods: {
 
     populateCalendar() {
         for(let i = 0; i < 30; i++) {
-            this.calendarDays.push( {id: i, date: new Date(2019, 10, i), fullyBooked: false, clicked: false, hours: [{ time: "08.00", booked: false }, 
+            this.calendarDays.push( {id: i, date: new Date(this.year, this.month, this.date + i), fullyBooked: false, clicked: false, hours: [{ time: "08.00", booked: false }, 
             { time: "09.00", booked: false },{ time: "10.00", booked: false }, { time: "11.00", booked: false }, { time: "12.00", booked: false },
             { time: "13.00", booked: false }, { time: "14.00", booked: false }, { time: "15.00", booked: false }]} );
-            console.log("Iteration " + i);
+            
         }
 
         this.calendarDays[1].hours[2].booked = true;
