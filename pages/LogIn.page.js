@@ -9,7 +9,7 @@ const LogInPage = {
               <div id="reg-modal-header">
                   <div @click="overlayActive = !overlayActive" id="reg-modal-collapse-btn">&#10006</div>
               </div>
-              <div id="reg-modal-body">
+              <form v-on:submit.prevent action="" id="reg-modal-body">
                   <h1 id="mod-title">Registrer deg</h1>
                   <p class="input-labels" id=full-name>Fullt navn</p>
                   <input type="text" name="" class="reg-input"  placeholder="Fullt navn" id="reg-name" v-model="fullName"/>
@@ -23,7 +23,7 @@ const LogInPage = {
                   <input type="password" class="reg-input" placeholder="Gjenta passord" id="reg-rep-pass" v-model="repPassword"/>
                   <br/>
                   <button id="reg-btn" class="login-modal-btns" @click="checkRegInput()">Registrer</button>
-              </div>
+              </form>
             </div>
           </transition>
         </div>
@@ -51,7 +51,7 @@ const LogInPage = {
                 <h1>Studentklinikken</h1>
             </div>
         </div>
-        <div id="login-input-row" class="row">
+        <form v-on:submit.prevent action="" id="login-input-row" class="row">
             <div id="login-input-col" class="col-12">
                 <p class="input-labels" >Brukernavn</p>
                 <input type="text" class="login-input" :class="{'error-class': logInFailed}" id="username-input" placeholder="Brukernavn(e-post)" v-model="username"/>
@@ -60,7 +60,7 @@ const LogInPage = {
                 <br/>
                 <div id="error-div" v-if="logInFailed">
                 <p id="login-error-message"><b>{{loginErrorMessage}}</b></p>
-                </div>
+              </div>
                 
                 <button id="login-btn" class="login-modal-btns" @click="checkInput">Logg inn</button>
                 <hr/>
@@ -69,7 +69,7 @@ const LogInPage = {
                 <h2 @click="visibleMod = !visibleMod" id="reg-link">Registrer deg</h2>
                 <router-link to="home">-></router-link>
             </div>
-        </div>  
+        </form>  
     </div>
     `,
   data() {
