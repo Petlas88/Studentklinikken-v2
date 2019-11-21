@@ -9,8 +9,10 @@ const RightsPage = {
             </div>
             <div id="text-row" class="row">
                 <p>
-                Vi forholder oss til en rekke lover og regler som ivaretar dine pasientrettigheter. Våre studenter må samtykke til å følge dette lovverket før de starter sin kliniske praksisperiode.
-                Under følger en oversikt over de mest relevante bestemmelsen for deg som pasient ved Studentklinikken tilhørende Institutt for Helsevitenskap.
+                Vi forholder oss til en rekke lover og regler som ivaretar dine pasientrettigheter. 
+                Våre studenter må samtykke til å følge dette lovverket før de starter sin kliniske praksisperiode.
+                Under følger en oversikt over de mest relevante bestemmelsen for deg som pasient ved Studentklinikken 
+                tilhørende Institutt for Helsevitenskap.
                 
                 </p>
             </div>
@@ -24,7 +26,8 @@ const RightsPage = {
 
                     <p>Studenter i praksis skal praktisere i henhold til gjeldene lovverk.
                     <br> <br>
-                    Alle saker som angår klienter / pasienter er konfidensielle jfr. Helsepersonelloven §§ 21 til 25 og Lov om alternativ behandling av sykdom mv. §4.
+                    Alle saker som angår klienter / pasienter er konfidensielle jfr. Helsepersonelloven §§ 21 til 25 og 
+                    Lov om alternativ behandling av sykdom mv. §4.
                     </p>
                 </div>
             </div>
@@ -37,9 +40,12 @@ const RightsPage = {
                 </div>
                 <div class="modals-body" v-bind:class="{'modal-dark': this.darkModeActive}">>
                     <br><br>
-                    <p>Vi registrerer, behandler og lagrer personopplysninger om pasienter i henhold til pasientjournalloven, personvernforordningen (GDPR), personopplysningsloven, helsepersonelloven.
+                    <p>Vi registrerer, behandler og lagrer personopplysninger om pasienter i henhold til pasientjournalloven, 
+                        personvernforordningen (GDPR), personopplysningsloven, helsepersonelloven.
                     <br> <br>
-                    Informasjonen lagres i en elektronisk pasientjournal. Den inneholder navn, fødselsdato og kontaktinformasjon, samt opplysninger om diagnose, sykdomsforløp, behandling, hvilken informasjon som er gitt og andre forhold som kan være av betydning.
+                    Informasjonen lagres i en elektronisk pasientjournal. Den inneholder navn, fødselsdato og kontaktinformasjon, 
+                    samt opplysninger om diagnose, sykdomsforløp, behandling, hvilken informasjon som er gitt og andre forhold 
+                    som kan være av betydning.
                     <br> <br>
                     Alle som har tilgang til dine personalia og pasientjournal er underlagt taushetsplikt.
                     <br> <br>
@@ -47,7 +53,8 @@ const RightsPage = {
                     <br> <br>
                     Utlevering av journaler krever signert samtykkeskjema fra klient/pasient.
                     <br> <br>
-                    Journaler skal oppbevares frem til det ikke lenger antas å være bruk for dem. Når dette ikke lenger er tilfellet, skal som en hovedregel journalene makuleres på betryggende vis. Normalt er dette 10 år.
+                    Journaler skal oppbevares frem til det ikke lenger antas å være bruk for dem. Når dette ikke lenger er tilfellet, 
+                    skal som en hovedregel journalene makuleres på betryggende vis. Normalt er dette 10 år.
                     </p>
                 </div>
             </div>

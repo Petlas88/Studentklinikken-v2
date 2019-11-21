@@ -10,19 +10,23 @@ const BookingPage = {
               <div id="buttons-container" class="col-12">
 
                 <router-link to="akucalendar">
-                  <button class="button-element" @click="modalOneVisible = !modalOneVisible, modalIsVisible = !modalIsVisible">{{modalOneTitle}}</button>
+                  <button class="button-element" 
+                  @click="modalOneVisible = !modalOneVisible, modalIsVisible = !modalIsVisible">{{modalOneTitle}}</button>
                 </router-link>
 
                 <router-link to="ostcalendar">
-                  <button class="button-element" @click="modalTwoVisible = !modalTwoVisible, modalIsVisible = !modalIsVisible">{{modalTwoTitle}}</button>
+                  <button class="button-element" 
+                  @click="modalTwoVisible = !modalTwoVisible, modalIsVisible = !modalIsVisible">{{modalTwoTitle}}</button>
                 </router-link>
 
                 <router-link to="kostcalendar">
-                  <button class="button-element" @click="modalThreeVisible = !modalThreeVisible, modalIsVisible = !modalIsVisible">{{modalThreeTitle}}</button>
+                  <button class="button-element" 
+                  @click="modalThreeVisible = !modalThreeVisible, modalIsVisible = !modalIsVisible">{{modalThreeTitle}}</button>
                 </router-link>
 
                 <router-link to="fyscalendar">
-                  <button class="button-element" @click="modalFourVisible = !modalFourVisible, modalIsVisible = !modalIsVisible">{{modalFourTitle}}</button> 
+                  <button class="button-element"
+                  @click="modalFourVisible = !modalFourVisible, modalIsVisible = !modalIsVisible">{{modalFourTitle}}</button> 
                 </router-link> 
                 
               </div>

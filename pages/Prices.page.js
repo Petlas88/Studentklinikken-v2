@@ -8,12 +8,16 @@ const PricesPage = {
           </div>
           <div class="row">
               <div id="prices-btn-row" class="col-12">
-                <button class="prices-btns" @click="showOrdinary = !showOrdinary, showDiscount = false" :class="{'prices-btns-clicked': showOrdinary}">Ordinær
+                <button class="prices-btns" @click="showOrdinary = !showOrdinary, showDiscount = false" 
+                :class="{'prices-btns-clicked': showOrdinary}">Ordinær
                 </button> 
-                <button class="prices-btns" @click="showDiscount = !showDiscount, showOrdinary = false" :class="{'prices-btns-clicked': showDiscount}">Rabatt*
+                <button class="prices-btns" @click="showDiscount = !showDiscount, showOrdinary = false" 
+                :class="{'prices-btns-clicked': showDiscount}">Rabatt*
                 </button>
-                <div id="ordinary-price-text" class="prices-text" :class="{'prices-text-dark': darkModeActive}" v-if="showOrdinary"><p v-for="value in ordinaryPrice">{{value}}</p></div>
-                <div id="discount-price-text" class="prices-text" :class="{'prices-text-dark': darkModeActive}" v-if="showDiscount"><p v-for="value in discPrice">{{value}}</p></div>
+                <div id="ordinary-price-text" class="prices-text" :class="{'prices-text-dark': darkModeActive}" 
+                v-if="showOrdinary"><p v-for="value in ordinaryPrice">{{value}}</p></div>
+                <div id="discount-price-text" class="prices-text" :class="{'prices-text-dark': darkModeActive}" 
+                v-if="showDiscount"><p v-for="value in discPrice">{{value}}</p></div>
                 <div><p v-for="value in priceInfo">{{value}}</p></div>
               </div>    
           </div>

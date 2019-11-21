@@ -35,7 +35,8 @@ const LogInPage = {
           <div v-if="invalidEmail" id="reg-confirmation-box"><p>Ugyldig<br> epostadresse</p><p id="x-mark">X</p></div>
         </transition>
         <transition name="popUp">
-          <div v-if="invalidPasswordLength" id="reg-confirmation-box"><p>Passord må være<br>8 karakterer langt</p><p id="x-mark">X</p></div>
+          <div v-if="invalidPasswordLength" id="reg-confirmation-box"><p>Passord må være<br>8 karakterer langt</p><p 
+          id="x-mark">X</p></div>
         </transition>
         <transition name="popUp">
           <div v-if="invalidRepPassword" id="reg-confirmation-box"><p>Passord <br>samstemmer ikke</p><p id="x-mark">X</p></div>
@@ -54,9 +55,11 @@ const LogInPage = {
         <form v-on:submit.prevent action="" id="login-input-row" class="row">
             <div id="login-input-col" class="col-12">
                 <p class="input-labels" >Brukernavn</p>
-                <input type="text" class="login-input" :class="{'error-class': logInFailed}" id="username-input" placeholder="Brukernavn(e-post)" v-model="username"/>
+                <input type="text" class="login-input" :class="{'error-class': logInFailed}" id="username-input" 
+                placeholder="Brukernavn(e-post)" v-model="username"/>
                 <p class="input-labels">Passord</p>
-                <input type="password" class="login-input" :class="{'error-class': logInFailed}" id="password-input" placeholder="Passord" v-model="password"/>
+                <input type="password" class="login-input" :class="{'error-class': logInFailed}" id="password-input" 
+                placeholder="Passord" v-model="password"/>
                 <br/>
                 <div id="error-div" v-if="logInFailed">
                 <p id="login-error-message"><b>{{loginErrorMessage}}</b></p>

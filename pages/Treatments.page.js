@@ -197,13 +197,18 @@ const TreatmentsPage = {
             </transition>
             <div id="trtmnt-btn-row" class="row">   
                 <div id="buttons-container" class="col-12">
-                    <button class="button-element" @click="modalOneVisible = !modalOneVisible, modalIsVisible = !modalIsVisible">{{modalOneTitle}}</button>
-                    <button class="button-element" @click="modalTwoVisible = !modalTwoVisible, modalIsVisible = !modalIsVisible">{{modalTwoTitle}}</button>
-                    <button class="button-element" @click="modalThreeVisible = !modalThreeVisible, modalIsVisible = !modalIsVisible">{{modalThreeTitle}}</button>
-                    <button class="button-element" @click="modalFourVisible = !modalFourVisible, modalIsVisible = !modalIsVisible">{{modalFourTitle}}</button>  
+                    <button class="button-element" @click="modalOneVisible = !modalOneVisible, modalIsVisible = !modalIsVisible">
+                        {{modalOneTitle}}</button>
+                    <button class="button-element" @click="modalTwoVisible = !modalTwoVisible, modalIsVisible = !modalIsVisible">
+                        {{modalTwoTitle}}</button>
+                    <button class="button-element" @click="modalThreeVisible = !modalThreeVisible, modalIsVisible = !modalIsVisible">
+                        {{modalThreeTitle}}</button>
+                    <button class="button-element" @click="modalFourVisible = !modalFourVisible, modalIsVisible = !modalIsVisible">
+                        {{modalFourTitle}}</button>  
                 </div>
             </div> 
-            <dark-mode-toggler @click.native="darkModeClicked = !darkModeClicked, checkDarkMode()" :class="{'dark-mode-toggler-dark': darkModeActive}"></dark-mode-toggler>
+            <dark-mode-toggler @click.native="darkModeClicked = !darkModeClicked, checkDarkMode()" 
+            :class="{'dark-mode-toggler-dark': darkModeActive}"></dark-mode-toggler>
         </div>
     
     `,

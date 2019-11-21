@@ -6,7 +6,8 @@ const CallendarPage = {
                     <h3>{{callendarTitle}}</h3>
                     <button @click = "populateCalendar">Test</button>
                     <div id="calendar-container">
-                        <div v-for="(day, index) in calendarDays" @click = "selectedDay = index, hoursVisible = true" class="dateCells" :class="{'dateCells-dark': darkModeActive}">
+                        <div v-for="(day, index) in calendarDays" @click = "selectedDay = index, hoursVisible = true" 
+                        class="dateCells" :class="{'dateCells-dark': darkModeActive}">
                         {{dayNames[day.date.getDay()]}}<br>{{day.date.getDate()}}<br>{{monthNames[day.date.getMonth()]}}
                         </div>
                     </div>
@@ -15,7 +16,9 @@ const CallendarPage = {
                             {{calendarDays[selectedDay].date.getDate()}}
                             {{monthNamesComplete[calendarDays[selectedDay].date.getMonth()]}}</h3>
                         <div id="hours-wrapper">
-                            <li v-for="(hour, index) in calendarDays[selectedDay].hours" v-bind:class="{ bookedHours: calendarDays[selectedDay].hours[index].booked }" @click = "selectedHour = index, showConfirm()">
+                            <li v-for="(hour, index) in calendarDays[selectedDay].hours"
+                             v-bind:class="{ bookedHours: calendarDays[selectedDay].hours[index].booked }" 
+                             @click = "selectedHour = index, showConfirm()">
                                 {{hour.time}}
                             </li>
                         </div>
@@ -32,12 +35,14 @@ const CallendarPage = {
                         Kl. {{calendarDays[selectedDay].hours[selectedHour].time}}</h2>
                         <br><br>
                         <h3>Ønsker du å bekrefte denne timen?</h3><br><br>
-                        <button id="order-conf-btn" @click="orderModalVisible = true, faderVisible = false, persistentVisible = true, confModalVisible = false">Jeg bekrefter</button>
+                        <button id="order-conf-btn" @click="orderModalVisible = true, faderVisible = false, 
+                        persistentVisible = true, confModalVisible = false">Jeg bekrefter</button>
 
                     </div>
                     <div id=persistent-fader v-if="persistentVisible"></div>
                     <div id="confirmed-order-modal" v-if="orderModalVisible">
-                        <h1>Takk for din bestilling {{currentUser}}</h1><h2>Vi sees<br>{{dayNamesComplete[calendarDays[selectedDay].date.getDay()]}} 
+                        <h1>Takk for din bestilling {{currentUser}}</h1><h2>Vi sees<br>
+                        {{dayNamesComplete[calendarDays[selectedDay].date.getDay()]}} 
                             {{calendarDays[selectedDay].date.getDate()}}
                             {{monthNamesComplete[calendarDays[selectedDay].date.getMonth()]}}<br>
                         Kl. {{calendarDays[selectedDay].hours[selectedHour].time}}</h2>
@@ -60,7 +65,8 @@ data() {
         dayNames: ["Søn", "Man", "Tir", "Ons", "Tor", "Fre", "Lør"],
         monthNames: ["Jan", "Feb", "Mar", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Des"],
         dayNamesComplete: ["Søndag", "Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lørdag"],
-        monthNamesComplete: ["Januar", "Februar", "Mars", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Desember"],
+        monthNamesComplete: ["Januar", "Februar", "Mars", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", 
+        "November", "Desember"],
         calendarDays: [],
         hoursVisible: false,
         confModalVisible: false,
