@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 .orders {
@@ -13,10 +14,21 @@
     flex-direction: column;
     width: 20rem; 
     height: 5.5em;  
+    min-height: 5.5em;
     background-color: lightseagreen;
-    margin: 0.5em 0em;
+    margin: 0.5em 0.5em;
     border-radius: 10px; 
     
+}
+
+#scroll-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 20em;
+    min-height: 20em;
 }
 
 .orders-header {
