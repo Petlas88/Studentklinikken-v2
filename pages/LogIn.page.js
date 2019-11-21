@@ -111,7 +111,7 @@ const LogInPage = {
       for (let i = 0; i < this.users.length; i++) {
         if (this.username == this.users[i].username) {
           if (this.password == this.users[i].password) {
-            this.$emit('logged-in-change', true)
+            this.$emit('logged-in-change', true, this.users[i].fullName, this.users[i].username)
             this.$router.push('/home')
           } 
         } else {

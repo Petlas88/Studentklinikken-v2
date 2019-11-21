@@ -28,7 +28,7 @@
 <body>
   <div id="app">
     <router-view :is-logged-in="isLoggedIn" @logged-in-change="loggedInChange" :dark-mode-active="darkModeActive"
-      @dark-mode-change="darkModeToggle"></router-view>
+      @dark-mode-change="darkModeToggle" :user-full-name="userFullName" :username="username"></router-view>
   </div>
   <script type="module" src="app.js"></script>
   <script>
