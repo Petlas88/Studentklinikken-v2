@@ -29,7 +29,7 @@ const AkuCalendarPage = {
             </div>
             
             <div id=removable-fader v-if="faderVisible" @click="faderVisible = false, confModalVisible = false"></div>
-                    <div id="confirmation-modal" v-if="confModalVisible">
+                    <div id="confirmation-modal" v-if="confModalVisible" v-bind:class="{'modal-dark': this.darkModeActive}">
                         <h2>Du har valgt {{service}} <br>{{dayNamesComplete[calendarDays[selectedDay].date.getDay()]}}
                             {{calendarDays[selectedDay].date.getDate()}}
                             {{monthNamesComplete[calendarDays[selectedDay].date.getMonth()]}}<br>
@@ -41,7 +41,7 @@ const AkuCalendarPage = {
 
                     </div>
                     <div id=persistent-fader v-if="persistentVisible"></div>
-                    <div id="confirmed-order-modal" v-if="orderModalVisible">
+                    <div id="confirmed-order-modal" v-if="orderModalVisible" v-bind:class="{'modal-dark': this.darkModeActive}">
                         <h1>Takk for din bestilling {{currentUser}}</h1><h2>Vi sees<br>
                         {{dayNamesComplete[calendarDays[selectedDay].date.getDay()]}} 
                             {{calendarDays[selectedDay].date.getDate()}}
