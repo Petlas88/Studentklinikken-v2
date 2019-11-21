@@ -2,7 +2,7 @@ const OrdersPage = {
     template: `
         <div class="container-fluid">
             <div id="title-row" class="row">
-                <div class="col-12">
+                <div class="col-12 orders-container">
                     <h1>{{ordersTitle}}</h1>
                     <div class="active-orders orders">
                         <div class="orders-header">

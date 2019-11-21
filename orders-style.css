@@ -1,13 +1,21 @@
 
+
+.orders-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .orders {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
-    width: 100%;
-    height: 6em;
+    width: 20rem; 
+    height: 5.5em;  
     background-color: lightseagreen;
     margin: 0.5em 0em;
+    border-radius: 10px; 
     
 }
 
