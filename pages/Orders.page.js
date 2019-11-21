@@ -73,3 +73,7 @@ const OrdersPage = {
 }
 
 export default OrdersPage;
+
+// <i class="far fa-thrash-alt" 
+// "far fa-calendar-alt"
+// far fa-clock"
