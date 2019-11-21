@@ -29,17 +29,17 @@ const LogInPage = {
         </div>
         </transition>
         <transition name="popUp">
-          <div v-if="invalidFullname" id="reg-confirmation-box"><p>Ufullstendig<br>navn</p><p id="x-mark">X</p></div>
+          <div v-if="invalidFullname" id="reg-confirmation-box"><p>Ufullstendig<br>navn</p><p id="x-mark">&#10006</p></div>
         </transition>
         <transition name="popUp">
-          <div v-if="invalidEmail" id="reg-confirmation-box"><p>Ugyldig<br> epostadresse</p><p id="x-mark">X</p></div>
+          <div v-if="invalidEmail" id="reg-confirmation-box"><p>Ugyldig<br> epostadresse</p><p id="x-mark">&#10006</p></div>
         </transition>
         <transition name="popUp">
           <div v-if="invalidPasswordLength" id="reg-confirmation-box"><p>Passord må være<br>8 karakterer langt</p><p 
           id="x-mark">X</p></div>
         </transition>
         <transition name="popUp">
-          <div v-if="invalidRepPassword" id="reg-confirmation-box"><p>Passord <br>samstemmer ikke</p><p id="x-mark">X</p></div>
+          <div v-if="invalidRepPassword" id="reg-confirmation-box"><p>Passord <br>samstemmer ikke</p><p id="x-mark">&#10006</p></div>
         </transition>
         <transition name="popUp">
           <div v-if="regSuccessful" id="reg-confirmation-box"><p>Registrering<br>fullført!</p><p id="check-mark">&check;</p></div>
