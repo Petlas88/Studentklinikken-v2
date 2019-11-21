@@ -22,12 +22,14 @@ const OrdersPage = {
                         <h4>{{orders[0].date}}</h4>
                         <h4>{{orders[0].time}}</h4>
                     </div>
-                    
+                    <label class="check-label">Vis utgåtte bestillinger
+                        <input type="checkbox" checked="checked" v-model="showPrevOrders">
+                        <span class="checkmark"></span>
+                    </label>
                 </div> 
                 <br>
                 <div id="orders-footer">
-                    <input id="show-btn" type="checkbox" v-model="showPrevOrders">&nbsp Vis utgåtte bestillinger
-                    <span class="checkmark"></span>
+                    
                 </div>
             </div>
         </div>
