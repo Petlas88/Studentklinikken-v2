@@ -1,6 +1,6 @@
 const ContactPage = {
     template: `
-    <div class="container-fluid" v-bind:class="[darkMode ? 'dark' : '']">
+    <div class="container-fluid">
             <div id="title-row" class="row">
                 <div class="col-12">
                     <h1>{{title}}</h1>
@@ -14,9 +14,9 @@ const ContactPage = {
                     </form>
                     <br><br>            
                     <p>Ditt navn</p>
-                    <input type="text" placeholder="Navn"/>
+                    <input type="text" v-bind:value="this.userFullName" placeholder="Navn"/>
                     <p>Din e-post</p>
-                    <input type="text" placeholder="E-post"/>
+                    <input type="text" v-bind:value="this.username" placeholder="E-post"/>
                     <p>Hva gjelder henveldelsen?</p>
                     <select>
                         <option id="placeholder-option" disabled selected value>Velg et alternativ</option>
@@ -27,10 +27,9 @@ const ContactPage = {
                     <p>Din melding</p>
                     <textarea name="" id="" cols="35" rows="10" placeholder="Skriv din melding her"></textarea> <br/>
                     <button id="contact-send-btn">Send</button> <br/>
-                    <!-- <button @click="darkMode = !darkMode">Toggle Dark Mode</button> -->
                 </div>
             </div>
-            
+            <dark-mode-toggler @click.native="darkModeClicked = !darkModeClicked, checkDarkMode()" :class="{'dark-mode-toggler-dark': darkModeActive}"></dark-mode-toggler>
     </div>
     
     `,
@@ -38,17 +37,23 @@ const ContactPage = {
 data() {
     return {
         title: "Kontakt oss",
-        // darkMode: false
+        darkModeClicked: false
     };
 },
+
+props: {
+    isLoggedIn: Boolean,
+    username: String,
+    userFullName: String,
+    darkModeActive: Boolean
+},
+
 methods: {
-    // darkModeToggle() {
-    //     if(this.darkMode) {
-    //         this.darkMode = false;
-    //     } else {
-    //         this.darkMode = true;
-    //     }
-    // }
+    checkDarkMode() {
+        console.log("clicked" + this.darkModeClicked)
+            this.$emit('dark-mode-change', this.darkModeClicked)   
+    }
 }
+
 };
 export default ContactPage;

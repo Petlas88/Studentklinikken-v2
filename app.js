@@ -8,13 +8,18 @@ new Vue({
   data() {
     return {
       isLoggedIn: false,
-      darkModeActive: false
+      darkModeActive: false,
+      userFullName: "",
+      username: ""
     }
   },
   methods: {
-    loggedInChange(value) {
-      console.log(value)
-      this.isLoggedIn = value
+    loggedInChange(isLoggedIn, userFullName, username) {
+      console.log(userFullName),
+      console.log(username),
+      this.isLoggedIn = isLoggedIn,
+      this.userFullName = userFullName,
+      this.username = username
     },
     darkModeToggle(value) {
       this.darkModeActive = value
@@ -42,4 +47,4 @@ new Vue({
   }
 })
 
-export default app
+export default app;
