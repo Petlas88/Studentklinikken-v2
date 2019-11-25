@@ -60,6 +60,9 @@ const FysCalendarPage = {
                             <i class="fas fa-home"></i>
                         </router-link>
                         <i class="fas fa-user"></i>
+                        <router-link to="booking" class="menu-links">
+                            <i class="fas fa-plus-circle"></i>
+                        </router-link>
                         <router-link to="orders" class="menu-links">
                             <i class="fas fa-calendar-check"></i>
                         </router-link>
