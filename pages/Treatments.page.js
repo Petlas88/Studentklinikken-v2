@@ -217,6 +217,9 @@ const TreatmentsPage = {
                     <i class="fas fa-home"></i>
                 </router-link>
                 <i class="fas fa-user"></i>
+                <router-link to="orders" class="menu-links">
+                    <i class="fas fa-calendar-check"></i>
+                </router-link>
             </div>
         </div>
         
