@@ -53,7 +53,9 @@ const KostCalendarPage = {
 
                     </div>
                     <div class="footer-menu">
-                        <i class="fas fa-chevron-circle-left"></i>
+                        <router-link to="booking" class="menu-links">
+                            <i class="fas fa-chevron-circle-left"></i>
+                        </router-link>
                         <router-link to="home" class="menu-links">
                             <i class="fas fa-home"></i>
                         </router-link>
