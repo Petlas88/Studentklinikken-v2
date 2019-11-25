@@ -39,6 +39,13 @@ const OrdersPage = {
                     
                 </div>
             </div>
+            <div class="footer-menu">
+                <i class="fas fa-chevron-circle-left"></i>
+                <router-link to="home" class="menu-links">
+                    <i class="fas fa-home"></i>
+                </router-link>
+                <i class="fas fa-user"></i>
+            </div>
         </div>
     
     `,

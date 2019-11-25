@@ -49,8 +49,13 @@ const AkuCalendarPage = {
                         Kl. {{calendarDays[selectedDay].hours[selectedHour].time}}</h2>
                         <router-link to="orders" id="order-conf-btn"><h4>Dine bestillinger</h4></router-link>
                         <router-link to="home" id="order-conf-btn"><h4>Hjem</h4></router-link>
-                        
-
+                    </div>
+                    <div class="footer-menu">
+                        <i class="fas fa-chevron-circle-left"></i>
+                        <router-link to="home" class="menu-links">
+                            <i class="fas fa-home"></i>
+                        </router-link>
+                        <i class="fas fa-user"></i>
                     </div>
         </div>
     `,

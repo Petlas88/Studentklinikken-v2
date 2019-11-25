@@ -86,7 +86,7 @@
 }
 
 .check-label {
-    margin-top: 1em;
+    margin-top: .5em;
     display: block;
     position: relative;
     padding-left: 35px;
@@ -167,4 +167,22 @@
     margin-bottom: 0.5em;
     display: inline-block;
   }
+
+  /*.footer-menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #1875d1;
+    color: white;
+    text-align: center;
+    min-height: 3em;
+  }
+
+  .footer-menu .fas {
+    font-size: 1.3em;
+  }*/
 

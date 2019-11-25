@@ -31,6 +31,13 @@ const ContactPage = {
             </div>
             <dark-mode-toggler @click.native="darkModeClicked = !darkModeClicked, checkDarkMode()" 
             :class="{'dark-mode-toggler-dark': darkModeActive}"></dark-mode-toggler>
+            <div class="footer-menu">
+                <i class="fas fa-chevron-circle-left"></i>
+                <router-link to="home" class="menu-links">
+                    <i class="fas fa-home"></i>
+                </router-link>
+                <i class="fas fa-user"></i>
+            </div>
     </div>
     
     `,
