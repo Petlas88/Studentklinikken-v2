@@ -37,6 +37,24 @@
     align-items: center;
 }
 
+.orders-header .fas {
+  margin-left: 8em;
+}
+
+.orders-date, .orders-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} 
+
+.orders-date i, .orders-time i {
+  margin: 0 .6em 0 .5em;
+}
+
+.orders-date {
+  margin-bottom: .2em;
+}
+
 .past-orders {
     background-color: lightslategrey;
 }

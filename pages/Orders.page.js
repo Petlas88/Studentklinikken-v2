@@ -5,29 +5,50 @@ const OrdersPage = {
                 <div class="col-12 orders-container">
                     <h1>{{ordersTitle}}</h1>
                     <div id="scroll-container">
+
                         <div class="active-orders orders">
                             <div class="orders-header">
                                 <h3>{{orders[2].service}}</h3>
-                                <button id="cancel-order-btn">Avbestill</button>
+                                <i class="fas fa-calendar-times"></i>
                             </div>
-                            <h4>{{orders[2].date}}</h4>
-                            <h4>{{orders[2].time}}</h4>
+                            <div class="orders-date">
+                                <i class="far fa-calendar-alt"></i><h4>{{orders[2].date}}</h4>
+                            </div>
+                            <div class="orders-time">
+                                <i class="far fa-clock"></i><h4>{{orders[2].time}}</h4>
+                            </div>
                         </div>
+
                         <div v-if="showPrevOrders" class="past-orders orders">
                             <h3>{{orders[1].service}}</h3>
-                            <h4>{{orders[1].date}}</h4>
-                            <h4>{{orders[1].time}}</h4>
+                            <div class="orders-date">
+                                <i class="far fa-calendar-alt"></i><h4>{{orders[1].date}}</h4>
+                            </div>
+                            <div class="orders-time">
+                            <i class="far fa-clock"></i><h4>{{orders[1].time}}</h4>
+                            </div>
                         </div>
+
                         <div v-if="showPrevOrders" class="past-orders orders">
                             <h3>{{orders[0].service}}</h3>
-                            <h4>{{orders[0].date}}</h4>
-                            <h4>{{orders[0].time}}</h4>
+                            <div class="orders-date">
+                                <i class="far fa-calendar-alt"></i><h4>{{orders[0].date}}</h4>
+                            </div>
+                            <div class="orders-time">
+                            <i class="far fa-clock"></i><h4>{{orders[0].time}}</h4>
+                            </div>
                         </div>
+
                         <div v-if="showPrevOrders" class="past-orders orders">
                             <h3>{{orders[0].service}}</h3>
-                            <h4>{{orders[0].date}}</h4>
-                            <h4>{{orders[0].time}}</h4>
+                            <div class="orders-date">
+                                <i class="far fa-calendar-alt"></i><h4>{{orders[0].date}}</h4>
+                            </div>
+                            <div class="orders-time">
+                            <i class="far fa-clock"></i><h4>{{orders[0].time}}</h4>
+                            </div>
                         </div>
+
                     </div>
                     <label class="check-label">Vis utgåtte bestillinger
                         <input type="checkbox" checked="checked" v-model="showPrevOrders">
