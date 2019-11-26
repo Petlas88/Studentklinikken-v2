@@ -84,7 +84,7 @@ data() {
         selectedHour: null,
         faderVisible: false,
         persistentVisible: false,
-        promptLogIn,
+        promptLogIn: false,
         callendarTitle: "Velg dag og tidspunkt",
         dayNames: ["Søn", "Man", "Tir", "Ons", "Tor", "Fre", "Lør"],
         monthNames: ["Jan", "Feb", "Mar", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Des"],
