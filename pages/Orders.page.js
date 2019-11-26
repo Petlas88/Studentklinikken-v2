@@ -2,7 +2,7 @@ const OrdersPage = {
     template: `
         <div class="container-fluid">
             <div id="title-row" class="row">
-                <div class="col-12 orders-container">
+                <div v-if="this.isLoggedin" class="col-12 orders-container">
                     <h1>{{ordersTitle}}</h1>
                     <div id="scroll-container">
 
@@ -60,6 +60,15 @@ const OrdersPage = {
                     
                 </div>
             </div>
+
+            <div v-if="!this.isLoggedIn">
+                Logg inn eller registrer deg for å se dine bestillinger
+                <br> <br>
+                <router-link to="/">
+                    <button class="button-element">Trykk her for å logge inn</button>
+                </router-link>
+            </div>
+
             <div class="footer-menu">
                 <i class="fas fa-chevron-circle-left"></i>
                 <router-link to="home" class="menu-links">
@@ -100,6 +109,11 @@ const OrdersPage = {
             ]
         };
     },
+    
+    props: {
+    darkModeActive: Boolean,
+    isLoggedIn: Boolean
+},
 
 }
 
