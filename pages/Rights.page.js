@@ -8,13 +8,20 @@ const RightsPage = {
                 </div>    
             </div>
             <div id="text-row" class="row">
-                <p>
-                Vi forholder oss til en rekke lover og regler som ivaretar dine pasientrettigheter. 
+                
+                <p>Vi forholder oss til en rekke lover og regler som ivaretar dine pasientrettigheter. 
                 Våre studenter må samtykke til å følge dette lovverket før de starter sin kliniske praksisperiode.
                 Under følger en oversikt over de mest relevante bestemmelsen for deg som pasient ved Studentklinikken 
-                tilhørende Institutt for Helsevitenskap.
+                tilhørende Institutt for Helsevitenskap.</p><br><br>
                 
-                </p>
+                
+            </div>
+
+            <div id="rights-btn-row" class="row">   
+                <div id="buttons-container" class="col-12">
+                    <button class="rights-button-element" @click="modalOneVisible = !modalOneVisible">{{modalOneTitle}}</button>
+                    <button class="rights-button-element" @click="modalTwoVisible = !modalTwoVisible">{{modalTwoTitle}}</button>
+                </div>
             </div>
             <transition name="slide-up">
             <div v-if="modalOneVisible" id="modal-one" class="modals">
@@ -59,12 +66,7 @@ const RightsPage = {
                 </div>
             </div>
             </transition>
-            <div id="rights-btn-row" class="row">   
-                <div id="buttons-container" class="col-12">
-                    <button class="rights-button-element" @click="modalOneVisible = !modalOneVisible">{{modalOneTitle}}</button>
-                    <button class="rights-button-element" @click="modalTwoVisible = !modalTwoVisible">{{modalTwoTitle}}</button>
-                </div>
-            </div>
+            
             <div class="footer-menu">
                 <router-link to="home" class="menu-links">
                     <i class="fas fa-chevron-circle-left"></i>
