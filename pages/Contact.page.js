@@ -12,7 +12,7 @@ const ContactPage = {
                     <form id="call-button" action="tel:97117690">
                     <button id="call-btn" >971 17 690</button>
                     </form>
-                    <br><br>            
+                    <br>            
                     <p>Ditt navn</p>
                     <input type="text" v-bind:value="this.userFullName" placeholder="Navn"/>
                     <p>Din e-post</p>
@@ -25,7 +25,7 @@ const ContactPage = {
                         <option>Klage</option>
                     </select>
                     <p>Din melding</p>
-                    <textarea name="" id="" cols="35" rows="10" placeholder="Skriv din melding her"></textarea> <br/>
+                    <textarea  placeholder="Skriv din melding her"></textarea> <br/>
                     <button id="contact-send-btn">Send</button> <br/>
                 </div>
             </div>
