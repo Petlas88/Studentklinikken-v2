@@ -27,44 +27,53 @@ const AkuCalendarPage = {
     
                 </div> 
             </div>
-            
-            <div id=removable-fader v-if="faderVisible" @click="faderVisible = false, confModalVisible = false"></div>
-                    <div id="confirmation-modal" v-if="confModalVisible" v-bind:class="{'modal-dark': this.darkModeActive}">
-                        <h2>Du har valgt {{service}} <br>{{dayNamesComplete[calendarDays[selectedDay].date.getDay()]}}
-                            {{calendarDays[selectedDay].date.getDate()}}
-                            {{monthNamesComplete[calendarDays[selectedDay].date.getMonth()]}}<br>
-                        Kl. {{calendarDays[selectedDay].hours[selectedHour].time}}</h2>
-                        <br><br>
-                        <h3>Ønsker du å bekrefte denne timen?</h3><br><br>
-                        <button id="order-conf-btn" @click="orderModalVisible = true, faderVisible = false, 
-                        persistentVisible = true, confModalVisible = false">Jeg bekrefter</button>
 
-                    </div>
-                    <div id=persistent-fader v-if="persistentVisible"></div>
-                    <div id="confirmed-order-modal" v-if="orderModalVisible" v-bind:class="{'modal-dark': this.darkModeActive}">
-                        <h1>Takk for din bestilling {{currentUser}}</h1><h2>Vi sees<br>
-                        {{dayNamesComplete[calendarDays[selectedDay].date.getDay()]}} 
-                            {{calendarDays[selectedDay].date.getDate()}}
-                            {{monthNamesComplete[calendarDays[selectedDay].date.getMonth()]}}<br>
-                        Kl. {{calendarDays[selectedDay].hours[selectedHour].time}}</h2>
-                        <router-link to="orders" id="order-conf-btn"><h4>Dine bestillinger</h4></router-link>
-                        <router-link to="home" id="order-conf-btn"><h4>Hjem</h4></router-link>
-                    </div>
-                    <div class="footer-menu">
-                        <router-link to="booking" class="menu-links">
-                            <i class="fas fa-chevron-circle-left"></i>
-                        </router-link>
-                        <router-link to="home" class="menu-links">
-                            <i class="fas fa-home"></i>
-                        </router-link>
-                        <i class="fas fa-user"></i>
-                        <router-link to="booking" class="menu-links">
-                            <i class="fas fa-plus-circle"></i>
-                        </router-link>
-                        <router-link to="orders" class="menu-links">
-                            <i class="fas fa-calendar-check"></i>
-                        </router-link>
-                    </div>
+            
+            <div id=removable-fader v-if="faderVisible" @click="faderVisible = false, confModalVisible = false, promptLogIn = false"></div>
+                <div id="confirmation-modal" v-if="promptLogIn" v-bind:class="{'modal-dark': this.darkModeActive}">
+                    <h2>Du må logge inn eller registrere deg for å kunne bestille time</h2>
+
+                    <router-link to="/">
+                        <button class="button-element">Trykk her for å logge inn</button>
+                    </router-link>
+                </div>
+
+                <div id="confirmation-modal" v-if="confModalVisible" v-bind:class="{'modal-dark': this.darkModeActive}">
+                    <h2>Du har valgt {{service}} <br>{{dayNamesComplete[calendarDays[selectedDay].date.getDay()]}}
+                        {{calendarDays[selectedDay].date.getDate()}}
+                        {{monthNamesComplete[calendarDays[selectedDay].date.getMonth()]}}<br>
+                    Kl. {{calendarDays[selectedDay].hours[selectedHour].time}}</h2>
+                    <br><br>
+                    <h3>Ønsker du å bekrefte denne timen?</h3><br><br>
+                    <button id="order-conf-btn" @click="orderModalVisible = true, faderVisible = false, 
+                    persistentVisible = true, confModalVisible = false">Jeg bekrefter</button>
+
+                </div>
+                <div id=persistent-fader v-if="persistentVisible"></div>
+                <div id="confirmed-order-modal" v-if="orderModalVisible" v-bind:class="{'modal-dark': this.darkModeActive}">
+                    <h1>Takk for din bestilling {{currentUser}}</h1><h2>Vi sees<br>
+                    {{dayNamesComplete[calendarDays[selectedDay].date.getDay()]}} 
+                        {{calendarDays[selectedDay].date.getDate()}}
+                        {{monthNamesComplete[calendarDays[selectedDay].date.getMonth()]}}<br>
+                    Kl. {{calendarDays[selectedDay].hours[selectedHour].time}}</h2>
+                    <router-link to="orders" id="order-conf-btn"><h4>Dine bestillinger</h4></router-link>
+                    <router-link to="home" id="order-conf-btn"><h4>Hjem</h4></router-link>
+                </div>
+                <div class="footer-menu">
+                    <router-link to="booking" class="menu-links">
+                        <i class="fas fa-chevron-circle-left"></i>
+                    </router-link>
+                    <router-link to="home" class="menu-links">
+                        <i class="fas fa-home"></i>
+                    </router-link>
+                    <i class="fas fa-user"></i>
+                    <router-link to="booking" class="menu-links">
+                        <i class="fas fa-plus-circle"></i>
+                    </router-link>
+                    <router-link to="orders" class="menu-links">
+                        <i class="fas fa-calendar-check"></i>
+                    </router-link>
+                </div>
         </div>
     `,
 
@@ -75,6 +84,7 @@ data() {
         selectedHour: null,
         faderVisible: false,
         persistentVisible: false,
+        promptLogIn: false,
         callendarTitle: "Velg dag og tidspunkt",
         dayNames: ["Søn", "Man", "Tir", "Ons", "Tor", "Fre", "Lør"],
         monthNames: ["Jan", "Feb", "Mar", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Des"],
@@ -95,7 +105,8 @@ data() {
 
 },
 props: {
-    darkModeActive: Boolean
+    darkModeActive: Boolean,
+    isLoggedIn: Boolean
 },
 
 methods: {
@@ -116,11 +127,15 @@ methods: {
     },
 
     showConfirm($event) {
-        if (this.calendarDays[this.selectedDay].hours[this.selectedHour].booked == false) {
-        this.confModalVisible = true; 
-        this.faderVisible = true;
+        if(this.isLoggedIn == true) {
+            if (this.calendarDays[this.selectedDay].hours[this.selectedHour].booked == false) {
+            this.confModalVisible = true; 
+            this.faderVisible = true;
+            } else {
+                return;
+            }
         } else {
-            return;
+            this.promptLogIn = true;
         }
     },
     

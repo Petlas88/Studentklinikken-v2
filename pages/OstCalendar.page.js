@@ -28,7 +28,14 @@ const OstCalendarPage = {
                 </div> 
             </div>
             
-            <div id=removable-fader v-if="faderVisible" @click="faderVisible = false, confModalVisible = false"></div>
+            <div id=removable-fader v-if="faderVisible" @click="faderVisible = false, confModalVisible = false, promptLogIn = false"></div>
+                <div id="confirmation-modal" v-if="promptLogIn" v-bind:class="{'modal-dark': this.darkModeActive}">
+                    <h2>Du må logge inn eller registrere deg for å kunne bestille time</h2>
+
+                    <router-link to="/">
+                        <button class="button-element">Trykk her for å logge inn</button>
+                    </router-link>
+                </div>
                     <div id="confirmation-modal" v-if="confModalVisible" v-bind:class="{'modal-dark': this.darkModeActive}">
                         <h2>Du har valgt {{service}} <br>{{dayNamesComplete[calendarDays[selectedDay].date.getDay()]}}
                             {{calendarDays[selectedDay].date.getDate()}}
@@ -78,6 +85,7 @@ data() {
         selectedHour: null,
         faderVisible: false,
         persistentVisible: false,
+        promptLogIn: false,
         callendarTitle: "Velg dag og tidspunkt",
         dayNames: ["Søn", "Man", "Tir", "Ons", "Tor", "Fre", "Lør"],
         monthNames: ["Jan", "Feb", "Mar", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Des"],
@@ -98,7 +106,8 @@ data() {
 
 },
 props: {
-    darkModeActive: Boolean
+    darkModeActive: Boolean,
+    isLoggedIn: Boolean
 },
 
 methods: {
@@ -117,11 +126,15 @@ methods: {
     },
 
     showConfirm($event) {
-        if (this.calendarDays[this.selectedDay].hours[this.selectedHour].booked == false) {
-        this.confModalVisible = true; 
-        this.faderVisible = true;
+        if(this.isLoggedIn == true) {
+            if (this.calendarDays[this.selectedDay].hours[this.selectedHour].booked == false) {
+            this.confModalVisible = true; 
+            this.faderVisible = true;
+            } else {
+                return;
+            }
         } else {
-            return;
+            this.promptLogIn = true;
         }
     },
 
