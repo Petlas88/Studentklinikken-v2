@@ -62,7 +62,7 @@ const OrdersPage = {
             </div>
 
             <div v-if="!this.isLoggedIn">
-                Logg inn eller registrer deg for å se dine bestillinger
+                <h2>Logg inn eller registrer deg for å se dine bestillinger</h2>
                 <br> <br>
                 <router-link to="/">
                     <button class="button-element">Trykk her for å logge inn</button>
