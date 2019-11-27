@@ -163,6 +163,7 @@ const LogInPage = {
         this.users.push({fullName: this.fullName, username: this.username, password: this.password});
         this.visibleMod = false;
         this.regSuccessful = true;
+        setTimeout(() => this.regSuccessful = false, 2000);
       }
     }
   }
