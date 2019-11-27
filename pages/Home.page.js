@@ -27,7 +27,8 @@ const HomePage = {
           </div>
           <div id="home-footer"><router-link to="rights" class="footer-links" :class="{'footer-links-dark': darkModeActive}">
               Rettigheter</router-link> | <router-link to="contact" class="footer-links" 
-              :class="{'footer-links-dark': darkModeActive}">Kontakt oss</router-link>
+              :class="{'footer-links-dark': darkModeActive}">Kontakt oss</router-link> | <router-link to="employees" class="footer-links" :class="{'footer-links-dark': darkModeActive}">
+              Ansatte</router-link>
         </div>
           <dark-mode-toggler @click.native="darkModeClicked = !darkModeClicked, checkDarkMode()" 
           :class="{'dark-mode-toggler-dark': darkModeActive}"></dark-mode-toggler>

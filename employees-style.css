@@ -1,4 +1,9 @@
+#employees-header {
+    margin-bottom: 2em;
+}
+
 #department-dropdown {
+    
     height: 3.2rem;
     width: 20rem;
     color: white;
@@ -12,17 +17,18 @@
 }
 .employee-div {
     font-size: 1.3rem;
-    padding-bottom: 3rem;
+    padding-bottom: 1rem;
 }
 
 .img-div {
+    margin-top: 2em;
     height: 50%;
     width: inherit;
 }
 
-.img-div > img {
-    height: 20rem;
-    width: 20rem;
+.img-div img {
+    height: 10rem;
+    width: 10rem;
     border-radius: 50%;
     border: 5px solid #a6abad;
 }

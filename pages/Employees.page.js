@@ -2,13 +2,15 @@ const EmployeesPage = {
     template: `
     <div class="container-fluid">
         <div id="title-row" class="row">
-            <div class="col-12">
+            <div class="col-12" id="employees-header">
                 <h1>Våre ansatte</h1>
                 <select name="" id="department-dropdown">
                     <option value="choose">Velg avdeling</option>
                     <option value="leader">Ledelsen</option>
                     <option value="ost">Osteopati</option>
-                    <option value="accu">Akkupunktur</option>
+                    <option value="aku">Akupunktur</option>
+                    <option value="fys">Fysiologisk Testlab</option>
+                    <option value="kost">Kostholdsveiledning</option>
                 </select>
         </div>
         </div>
