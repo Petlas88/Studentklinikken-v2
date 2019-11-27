@@ -260,6 +260,10 @@ input:focus, textarea:focus {
   
 }
 
+i {
+  cursor: pointer;
+}
+
 #hours-wrapper li {
   height: 30%;
   width: 30%;
@@ -272,7 +276,7 @@ input:focus, textarea:focus {
   border-radius: 10px;
 }
 
-#confirmation-modal, #confirmed-order-modal {
+#confirmation-modal, #confirmed-order-modal, #cancel-modal {
   position: absolute;
   display: flex;
   flex-direction: column;

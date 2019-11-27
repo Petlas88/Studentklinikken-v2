@@ -9,7 +9,7 @@ const OrdersPage = {
                         <div class="active-orders orders">
                             <div class="orders-header">
                                 <h3>{{orders[2].service}}</h3>
-                                <i class="fas fa-calendar-times"></i>
+                                <i @click="showCancellation = true" class="click-icon" class="fas fa-calendar-times"></i>
                             </div>
                             <div class="orders-date">
                                 <i class="far fa-calendar-alt"></i><h4>{{orders[2].date}}</h4>
@@ -54,6 +54,10 @@ const OrdersPage = {
                         <input type="checkbox" checked="checked" v-model="showPrevOrders">
                         <span class="checkmark"></span>
                     </label>
+
+                    <div v-if="showCancellation" id="cancel-order-modal">
+                        Skjer det noe her?
+                    </div>
                 </div> 
                 <br>
                 <div id="orders-footer">
@@ -86,6 +90,7 @@ const OrdersPage = {
     data() {
         return {
             showPrevOrders: true,
+            showCancellation: false,
             ordersTitle: "Mine bestillinger",
             orders: [
                 {
@@ -114,6 +119,12 @@ const OrdersPage = {
     darkModeActive: Boolean,
     isLoggedIn: {
         default: false,
+    },
+
+    methods: {
+        cancelOrder(order) {
+
+        }
     }
 },
 

@@ -115,6 +115,11 @@ const LogInPage = {
           fullName: "Bjarne Brøndbo",
           username: "bjarne@kek.no",
           password: "bjarne123"
+        },
+        { 
+          fullName: "Christian Sin Test Bruker",
+          username: "1",
+          password: "1"
         }
       ]
     };
