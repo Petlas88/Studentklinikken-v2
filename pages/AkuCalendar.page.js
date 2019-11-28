@@ -107,7 +107,6 @@ data() {
 props: {
     darkModeActive: Boolean,
     isLoggedIn: Boolean,
-    username: String,
     userFullName: String,
 
 },

@@ -276,7 +276,7 @@ input:focus, textarea:focus {
   border-radius: 10px;
 }
 
-#confirmation-modal, #confirmed-order-modal, #cancel-modal {
+#confirmation-modal, #confirmed-order-modal, #cancel-modal, #contact-modal {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -290,6 +290,12 @@ input:focus, textarea:focus {
   background-color: rgb(236, 240, 240);
   border: 2px solid #1875d1;
   border-radius: 2%;
+}
+
+#contact-modal {
+  top: 0%;
+  height: 92%;
+  
 }
 
 #removable-fader, #persistent-fader {

@@ -12,7 +12,13 @@ const ContactPage = {
                     <form id="call-button" action="tel:97117690">
                     <button id="call-btn" >971 17 690</button>
                     </form>
-                    <br>            
+                    <br>
+                    <button @click="showContactForm = true, faderVisible = true"id="contact-send-btn">Send oss en melding</button>           
+                    
+                </div>
+
+                <div id=removable-fader v-if="faderVisible" @click="showContactForm = false, faderVisible = false"></div>
+                    <div id="contact-modal" v-if="showContactForm" v-bind:class="{'modal-dark': this.darkModeActive}">
                     <p>Ditt navn</p>
                     <input type="text" v-bind:value="this.userFullName" placeholder="Navn"/>
                     <p>Din e-post</p>
@@ -27,7 +33,6 @@ const ContactPage = {
                     <p>Din melding</p>
                     <textarea  placeholder="Skriv din melding her"></textarea> <br/>
                     <button id="contact-send-btn">Send</button> <br/>
-                </div>
             </div>
             <dark-mode-toggler @click.native="darkModeClicked = !darkModeClicked, checkDarkMode()" 
             :class="{'dark-mode-toggler-dark': darkModeActive}"></dark-mode-toggler>
@@ -53,7 +58,9 @@ const ContactPage = {
 data() {
     return {
         title: "Kontakt oss",
-        darkModeClicked: false
+        darkModeClicked: false,
+        showContactForm: false,
+        faderVisible: false
     };
 },
 
