@@ -249,16 +249,20 @@ const TreatmentsPage = {
     darkModeActive: Boolean
 },
   methods: {
+
+    checkDarkMode() {
+        console.log("clicked" + this.darkModeClicked)
+            this.$emit('dark-mode-change', this.darkModeClicked)   
+
+    },
+
     hideModal() {
         this.modalOneVisible = false;
         this.modalTwoVisible = false;
         this.modalThreeVisible = false;
         this.modalFourVisible = false;
     },
-    checkDarkMode() {
-        console.log("clicked" + this.darkModeClicked)
-            this.$emit('dark-mode-change', this.darkModeClicked)   
-}
+    
   }
 
 

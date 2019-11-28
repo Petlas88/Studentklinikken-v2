@@ -1,6 +1,7 @@
 const EmployeesPage = {
     template: `
     <div class="container-fluid">
+    <dark-mode-toggler @click.native="darkModeClicked = !darkModeClicked, checkDarkMode()" :class="{'dark-mode-toggler-dark': darkModeActive}"></dark-mode-toggler>
         <div id="title-row" class="row">
             <div class="col-12" id="employees-header">
                 <h1>Våre ansatte</h1>
@@ -21,10 +22,26 @@ const EmployeesPage = {
                 </li>
             </div>
         </div>
+        <div class="footer-menu">
+                <router-link to="home" class="menu-links">
+                    <i class="fas fa-chevron-circle-left"></i>
+                </router-link>
+                <router-link to="home" class="menu-links">
+                    <i class="fas fa-home"></i>
+                </router-link>
+                <i class="fas fa-user"></i>
+                <router-link to="booking" class="menu-links">
+                    <i class="fas fa-plus-circle"></i>
+                </router-link>
+                <router-link to="orders" class="menu-links">
+                    <i class="fas fa-calendar-check"></i>
+                </router-link>
+    </div>
     </div>
     `,
     data() {
         return {
+            darkModeClicked: false,
             employees: [ 
                 {
                     imgSrc: "Emp1.jpg",
@@ -40,7 +57,19 @@ const EmployeesPage = {
                 }
             ]
         }
-    }
+    },
+
+    props: {
+        darkModeActive: Boolean,
+      },
+    
+      methods: {
+        checkDarkMode() {
+            console.log("clicked" + this.darkModeClicked)
+                this.$emit('dark-mode-change', this.darkModeClicked)   
+    
+        }
+      },
 }
 
 export default EmployeesPage;

@@ -1,6 +1,7 @@
 const LogInPage = {
   template: `
     <div id="login-cont" class="container-fluid">
+  
         <!--REGISTRATION MODAL-->
         <transition name="overlay-fade" @after-enter="overlayActive = true">
         <div v-if="visibleMod" id="reg-modal">
@@ -105,6 +106,7 @@ const LogInPage = {
       password: '',
       repPassword: '',
       regSuccessful: false,
+      darkModeClicked: false,
       users: [
         { 
           fullName: "Kekemeister Keksen",
@@ -142,6 +144,7 @@ const LogInPage = {
       }
 
     },
+
     checkRegInput() {
       if(this.fullName.length > 3) {
         this.invalidFullname = false;
