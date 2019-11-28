@@ -28,7 +28,11 @@ const ContactPage = {
                     <button id="call-btn" >971 17 690</button>
                     </form>
                     <br>
-                    <button @click="showContactForm = true, faderVisible = true"id="contact-send-btn">Send oss en melding</button>           
+                    <button @click="showContactForm = true, faderVisible = true"id="contact-send-btn">Send oss en melding</button>
+                    <br>
+                    <h4>Du finner oss på Prinsens Gate 7</h4>
+
+                    <img id="map" src="/images/map.png">
                     
                 </div>
 

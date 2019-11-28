@@ -66,8 +66,10 @@ const OrdersPage = {
                         på {{orders[2].date}} klokken {{orders[2].time}}
                     </h2>
 
-                    <button @click="orderActive = false, showCancellation = false, faderVisible = false">Kanseller timen</button>
-                    <button @click="showCancellation = false, faderVisible = false">Behold timen</button>
+                    <button class="cancel-btns"@click="orderActive = false, showCancellation = false, faderVisible = false">Kanseller timen</button>
+                    <br>
+                    <br>
+                    <button class="cancel-btns" @click="showCancellation = false, faderVisible = false">Behold timen</button>
                 </div>
 
             <div v-if="isLoggedIn == false">
@@ -126,14 +128,9 @@ const OrdersPage = {
     darkModeActive: Boolean,
     isLoggedIn: {
         default: false,
-    },
-
-    methods: {
-        
-        cancellation() {
-            
-        }
     }
+
+    
 },
 
 }
