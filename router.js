@@ -12,6 +12,7 @@ import AkuCalendarPage from "./pages/AkuCalendar.page.js";
 import OstCalendarPage from "./pages/OstCalendar.page.js";
 import KostCalendarPage from "./pages/KostCalendar.page.js";
 import FysCalendarPage from "./pages/FysCalendar.page.js";
+import InformationPage from "./pages/Information.page.js";
 import app from "./app.js"
 
 const router = new VueRouter({
@@ -71,6 +72,10 @@ const router = new VueRouter({
     {
       path: "/fyscalendar",
       component: FysCalendarPage
+    },
+    {
+      path: "/information",
+      component: InformationPage
     },
   ]
 });
