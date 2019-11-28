@@ -36,7 +36,7 @@ const ContactPage = {
                     <div id="img-container">
 
                     </div>
-                        <!--<img id="map" src="/images/mapSK.png" alt="Kart av vår addresse">-->
+                        
                     </a>
                     
                 </div>
