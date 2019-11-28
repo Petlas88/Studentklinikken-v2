@@ -43,9 +43,10 @@ const FysCalendarPage = {
                             {{monthNamesComplete[calendarDays[selectedDay].date.getMonth()]}}<br>
                         Kl. {{calendarDays[selectedDay].hours[selectedHour].time}}</h2>
                         <br><br>
-                        <h3>Ønsker du å bekrefte denne timen, {{userFullName}}?</h3><br><br>
+                        <h3>Ønsker du å bekrefte denne timen, {{userFullName}}?</h3><br>
                         <button id="order-conf-btn" @click="orderModalVisible = true, faderVisible = false, 
                         persistentVisible = true, confModalVisible = false">Jeg bekrefter</button>
+                        <button id="order-conf-btn" @click="faderVisible = false, confModalVisible = false">Avbryt</button>
 
                     </div>
                     <div id=persistent-fader v-if="persistentVisible"></div>
