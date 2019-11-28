@@ -16,24 +16,27 @@ const ContactPage = {
                     <i class="fas fa-calendar-check"></i>
                 </router-link>
             </div>
-            <div id="title-row" class="row">
+            <div id="title-row" class="row title-row-fix">
                 <div class="col-12">
                     <h1>{{title}}</h1>
                 </div>    
             </div>
             <div id="contact-input-row" class="row">
                 <div class="col-12">
-                    <h3>Ring oss</h3>
+                    <h3>Telefon</h3>
                     <form id="call-button" action="tel:97117690">
                     <button id="call-btn" >971 17 690</button>
                     </form>
                     <br>
                     <button @click="showContactForm = true, faderVisible = true"id="contact-send-btn">Send oss en melding</button>
                     <br>
-                    <h4>Du finner oss på Prinsens Gate 7</h4>
+                    <h4>Du finner oss i Prinsens Gate 7</h4>
 
                     <a href="https://www.google.com/maps/place/Prinsens+gate+7,+0152+Oslo/@59.9109222,10.7447886,18z/data=!4m5!3m4!1s0x46416e89ca590dbd:0xac81c1d030944b88!8m2!3d59.9109778!4d10.7460076">
-                        <img id="map" src="/images/map.png" alt="Kart av vår addresse">
+                    <div id="img-container">
+
+                    </div>
+                        <!--<img id="map" src="/images/mapSK.png" alt="Kart av vår addresse">-->
                     </a>
                     
                 </div>

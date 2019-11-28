@@ -6,6 +6,10 @@
     padding-bottom: 2rem;
 }
 
+.title-row-fix {
+  height: 18vh; 
+}
+
 #call-btn, #contact-send-btn {
     height: 3.2rem;
     width: 21rem;
@@ -61,6 +65,15 @@ textarea {
     right: 5%
   }
 
-  #map {
-    width: 15rem;
+  #img-container {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 500px;
+    height: 9em;
+    background-image: url("./images/mapSK.png");
+    background-position: center;
+    border: 2px solid #1875d1;
   }
+
+  
+  
