@@ -42,14 +42,14 @@ const FysCalendarPage = {
                             {{monthNamesComplete[calendarDays[selectedDay].date.getMonth()]}}<br>
                         Kl. {{calendarDays[selectedDay].hours[selectedHour].time}}</h2>
                         <br><br>
-                        <h3>Ønsker du å bekrefte denne timen?</h3><br><br>
+                        <h3>Ønsker du å bekrefte denne timen, {{userFullName}}?</h3><br><br>
                         <button id="order-conf-btn" @click="orderModalVisible = true, faderVisible = false, 
                         persistentVisible = true, confModalVisible = false">Jeg bekrefter</button>
 
                     </div>
                     <div id=persistent-fader v-if="persistentVisible"></div>
                     <div id="confirmed-order-modal" v-if="orderModalVisible" v-bind:class="{'modal-dark': this.darkModeActive}">
-                        <h1>Takk for din bestilling {{currentUser}}</h1><h2>Vi sees<br>
+                        <h1>Takk for din bestilling {{userFullName}}</h1><h2>Vi sees<br>
                         {{dayNamesComplete[calendarDays[selectedDay].date.getDay()]}} 
                             {{calendarDays[selectedDay].date.getDate()}}
                             {{monthNamesComplete[calendarDays[selectedDay].date.getMonth()]}}<br>
@@ -106,7 +106,8 @@ data() {
 },
 props: {
     darkModeActive: Boolean,
-    isLoggedIn: Boolean
+    isLoggedIn: Boolean,
+    userFullName: String
 },
 
 methods: {
