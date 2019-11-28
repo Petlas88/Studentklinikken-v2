@@ -32,7 +32,9 @@ const ContactPage = {
                     <br>
                     <h4>Du finner oss på Prinsens Gate 7</h4>
 
-                    <img id="map" src="/images/map.png">
+                    <a href="https://www.google.com/maps/place/Prinsens+gate+7,+0152+Oslo/@59.9109222,10.7447886,18z/data=!4m5!3m4!1s0x46416e89ca590dbd:0xac81c1d030944b88!8m2!3d59.9109778!4d10.7460076">
+                        <img id="map" src="/images/map.png" alt="Kart av vår addresse">
+                    </a>
                     
                 </div>
 

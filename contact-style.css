@@ -60,3 +60,7 @@ textarea {
     width: 100vw; 
     right: 5%
   }
+
+  #map {
+    width: 15rem;
+  }
