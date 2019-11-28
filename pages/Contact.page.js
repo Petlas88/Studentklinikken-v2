@@ -18,7 +18,12 @@ const ContactPage = {
                 </div>
 
                 <div id=removable-fader v-if="faderVisible" @click="showContactForm = false, faderVisible = false"></div>
+
                     <div id="contact-modal" v-if="showContactForm" v-bind:class="{'modal-dark': this.darkModeActive}">
+
+                    <div class="modal-head">
+                        <button class="modal-close-btn click-icon" @click="showContactForm = false, faderVisible = false">&#10006</button>
+                    </div>
                     <p>Ditt navn</p>
                     <input type="text" v-bind:value="this.userFullName" placeholder="Navn"/>
                     <p>Din e-post</p>

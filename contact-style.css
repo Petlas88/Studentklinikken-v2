@@ -37,3 +37,26 @@ textarea {
   width: 95%;
   height: 10em;
 }
+
+.modal-close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-right: 0.2rem;
+    border: #1875d1 solid 2px;
+    border-radius: 50%;
+    height: 2.3rem;
+    width: 2.3rem;
+    font-size: 1rem;
+  }
+
+  .modal-head {
+    text-align: center;
+    display: flex;
+    position: fixed;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100vw; 
+    right: 5%
+  }
