@@ -6,15 +6,15 @@ const OrdersPage = {
                     <h1>{{ordersTitle}}</h1>
                     <div id="scroll-container">
 
-                        <div class="active-orders orders">
-                            <div class="orders-header">
+                        <div v-if="orderActive" class="active-orders orders">
+                            <div v-if="orderActive" class="orders-header">
                                 <h3>{{orders[2].service}}</h3>
-                                <i @click="showCancellation = true" class="click-icon" class="fas fa-calendar-times"></i>
+                                <i @click="showCancellation = true, faderVisible = true" class="click-icon fas fa-calendar-times"></i>
                             </div>
-                            <div class="orders-date">
+                            <div v-if="orderActive" class="orders-date">
                                 <i class="far fa-calendar-alt"></i><h4>{{orders[2].date}}</h4>
                             </div>
-                            <div class="orders-time">
+                            <div v-if="orderActive" class="orders-time">
                                 <i class="far fa-clock"></i><h4>{{orders[2].time}}</h4>
                             </div>
                         </div>
@@ -54,16 +54,21 @@ const OrdersPage = {
                         <input type="checkbox" checked="checked" v-model="showPrevOrders">
                         <span class="checkmark"></span>
                     </label>
-
-                    <div v-if="showCancellation" id="cancel-order-modal">
-                        Skjer det noe her?
-                    </div>
                 </div> 
                 <br>
                 <div id="orders-footer">
                     
                 </div> 
             </div>
+            <div id=removable-fader v-if="faderVisible" @click="showCancellation = false, faderVisible = false"></div>
+                <div v-if="showCancellation" id="confirmation-modal" v-bind:class="{'modal-dark': this.darkModeActive}">
+                    <h2>Er du sikker på at du vil kansellere din time hos {{orders[2].service}} <br>
+                        på {{orders[2].date}} klokken {{orders[2].time}}
+                    </h2>
+
+                    <button @click="orderActive = false, showCancellation = false, faderVisible = false">Kanseller timen</button>
+                    <button @click="showCancellation = false, faderVisible = false">Behold timen</button>
+                </div>
 
             <div v-if="isLoggedIn == false">
                 <h2>Logg inn eller registrer deg for å se dine bestillinger</h2>
@@ -90,7 +95,9 @@ const OrdersPage = {
     data() {
         return {
             showPrevOrders: true,
+            faderVisible: false,
             showCancellation: false,
+            orderActive: true,
             ordersTitle: "Mine bestillinger",
             orders: [
                 {
@@ -122,8 +129,8 @@ const OrdersPage = {
     },
 
     methods: {
-        cancelOrder(order) {
-
+        cancellation() {
+            
         }
     }
 },
