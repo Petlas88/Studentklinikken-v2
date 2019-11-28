@@ -31,7 +31,7 @@ const FysCalendarPage = {
             
             <div id=removable-fader v-if="faderVisible" @click="faderVisible = false, confModalVisible = false, promptLogIn = false"></div>
                 <div id="confirmation-modal" v-if="promptLogIn" v-bind:class="{'modal-dark': this.darkModeActive}">
-                    <h2>Du må logge inn eller registrere deg for å kunne bestille time</h2>
+                    <h2 id="login-alert">>Du må logge inn eller registrere deg for å kunne bestille time</h2>
 
                     <router-link to="/">
                         <button class="button-element">Trykk her for å logge inn</button>
