@@ -25,19 +25,43 @@ body {
 }
 
 .dark-mode-toggler {
-  height: 2.5rem;
-  width: 2.5rem; 
-  background-color: #000000;
+  right: 0.5rem;
+  top: 0.5rem;
+  height: 1.5rem;
+  width: 3rem; 
+  background-color: #009479;
   border-radius: 50px;
-  position: relative;
+  position: absolute;
+  transition: 1s ease;
 }
 
 .dark-mode-toggler-dark {
-  height: 2.5rem;
-  width: 2.5rem; 
-  background-color: #e41111;
+  background-color: #9B21E1;
+  transition: 1s ease;
+}
+
+.dark-mode-thumb {
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: #332d2d;
+  display: flex;
   border-radius: 50px;
-  position: relative;
+  transition: 1s ease;
+  position: absolute;
+  left: 0;
+}
+
+.dark-mode-thumb i {
+  color: #fff;
+  margin: auto;
+  font-size: 1em;
+}
+
+
+.dark-mode-thumb-dark {
+  transition: 1s ease;
+  background-color: #01579b;
+  left: 1.5rem
 }
 
 select {

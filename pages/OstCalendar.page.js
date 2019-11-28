@@ -1,6 +1,7 @@
 const OstCalendarPage = {
     template: `
         <div class="container-fluid">
+        <dark-mode-toggler @click.native="darkModeClicked = !darkModeClicked, checkDarkMode()" :class="{'dark-mode-toggler-dark': darkModeActive}"></dark-mode-toggler>
             <div id="title-row" class="row">
                 <div class="col-12">
                     <h1>Osteopati</h1>
@@ -100,6 +101,8 @@ data() {
         year: new Date().getFullYear(),
         month: new Date().getMonth(),
         date: new Date().getDate(),
+        darkModeClicked: false,
+
         
 
     }
@@ -149,6 +152,12 @@ methods: {
             }
             
         }
+    },
+
+    checkDarkMode() {
+        console.log("clicked" + this.darkModeClicked)
+            this.$emit('dark-mode-change', this.darkModeClicked)   
+
     }
 },
 created: function() {

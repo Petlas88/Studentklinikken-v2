@@ -29,8 +29,7 @@ const HomePage = {
               </div>
           </div>
           
-          <dark-mode-toggler @click.native="darkModeClicked = !darkModeClicked, checkDarkMode()" 
-          :class="{'dark-mode-toggler-dark': darkModeActive}"></dark-mode-toggler>
+          <dark-mode-toggler @click.native="darkModeClicked = !darkModeClicked, checkDarkMode()" :class="{'dark-mode-toggler-dark': darkModeActive}"></dark-mode-toggler>
       </div>
       `,
   data() {

@@ -2,7 +2,9 @@
 const BookingPage = {
   template: `
     <div class="container-fluid">
+    <dark-mode-toggler @click.native="darkModeClicked = !darkModeClicked, checkDarkMode()" :class="{'dark-mode-toggler-dark': darkModeActive}"></dark-mode-toggler>
       <div id="title-row" class="row">
+      
         <div class="col-12">
           <h1>Velg tjeneste du ønsker å bestille</h1>
             <div id="trtmnt-btn-row" class="row">   
@@ -40,6 +42,7 @@ const BookingPage = {
         <router-link to="orders" class="menu-links">
           <i class="fas fa-calendar-check"></i>
         </router-link>
+        
       </div>
 
     </div>
@@ -53,9 +56,24 @@ const BookingPage = {
       modalTwoTitle: "Osteopati",
       modalThreeTitle: "Kostholdsveiledning",
       modalFourTitle: "Fysiologisk testlab",
+      darkModeClicked: false,
 
     }
-  }
+
+    
+  },
+
+  props: {
+    darkModeActive: Boolean
+  },
+
+  methods: {
+    checkDarkMode() {
+        console.log("clicked" + this.darkModeClicked)
+            this.$emit('dark-mode-change', this.darkModeClicked)   
+
+    }
+  },
 
 
  

@@ -1,6 +1,7 @@
 const PricesPage = {
   template: `
       <div class="container-fluid">
+      <dark-mode-toggler @click.native="darkModeClicked = !darkModeClicked, checkDarkMode()" :class="{'dark-mode-toggler-dark': darkModeActive}"></dark-mode-toggler>
           <div id="title-row" class="row">
               <div class="col-12">
                   <h1>Priser</h1>
@@ -40,6 +41,7 @@ const PricesPage = {
       `,
   data() {
     return {
+      darkModeClicked: false,
       ordinaryPrice: {
         firstTreatment: "Første behandling 300,-",
         nextTreatment: "Oppfølgende behandling 220,-"
@@ -61,7 +63,14 @@ const PricesPage = {
   },
   props: {
     darkModeActive: Boolean
-}
+},
+methods: {
+  checkDarkMode() {
+      console.log("clicked" + this.darkModeClicked)
+          this.$emit('dark-mode-change', this.darkModeClicked)   
+
+  }
+},
 };
 
 export default PricesPage;
